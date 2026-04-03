@@ -7,27 +7,14 @@
 */
 
 #define BUTTON 17
+// ----------------------------------
+// DATA PACKET SETTINGS
+// ----------------------------------
 
 // ----------------------------------
 // I2C AND GPS MODULE SETTINGS
 // ----------------------------------
-// #define I2C_SDA 11
-// #define I2C_SCL 12
-
-// Real-Time Clock Register
-// #define I2C_SECOND_ADDR 0x00
-// #define I2C_MINUTE_ADDR 0x01
-// #define I2C_HOUR_ADDR 0x02
-// #define I2C_WEEK_ADDR 0x03
-// #define I2C_DAY_ADDR 0x04
-// #define I2C_MONTH_ADDR 0x05
-// #define I2C_YEAR_ADDR 0x06
-#define INITIAL_YEAR 2026
-#define INITIAL_MONTH 3
-#define INITIAL_DAY 14
-#define INITIAL_HOUR 0
-#define INITIAL_MINUTE 0
-#define INITIAL_SECOND 0
+#define OFFSET_FROM_GMT -5  // CST is 5 hours behind GMT (no daylight savings)
 
 // ----------------------------------
 // I2S AND MIC SETTINGS
@@ -45,4 +32,4 @@
 #define SERVICE_UUID "3098A182-02B0-4A35-889A-93B71E1748B9"
 #define CHARACTERISTIC_UUID "B536BCCE-2C24-4F7C-BF9F-1DE558316263"
 #define BLE_SERVER_NAME "Wearable_Alert_Device"
-#define MTU_SIZE 23
+#define MTU_SIZE 256
