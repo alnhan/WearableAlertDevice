@@ -19,7 +19,7 @@
 *
 */
 struct DataPacket {
-  char timestampCST[19];
+  char timestampCST[20];
   double latDegrees;
   double longDegrees;
   double altitudeM;
@@ -69,13 +69,106 @@ void IRAM_ATTR handleButtonInterrupt() {
   isButtonPressed = true;
 }
 
+/*
+* Adjust the timestamp to be in CST instead of GMT. 
+*
+*/
+void adjustTimestampToCST() {
+  timestamp[HOUR_IDX] += OFFSET_FROM_GMT;
+
+  if (timestamp[HOUR_IDX] < 0) {
+    // Negative hours, add 24 hours to be within military time range.
+    timestamp[HOUR_IDX] += 24;
+
+    // Set the time back one day.
+    timestamp[DAY_IDX] -= 1;
+
+    // Check if time went back into previous month.
+    if (timestamp[DAY_IDX] == 0) {
+      // Time went back into previous month, day is now last day of that month.
+      switch (timestamp[MONTH_IDX]) {
+        case (1):
+          // January, move back to December
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 12;
+          timestamp[YEAR_IDX] -= 1;
+          break;
+        case (2):
+          // February, move back to January
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 1;
+        case (3):
+          // March, move back to February
+          if ((timestamp[YEAR_IDX] % 4 == 0) && (timestamp[YEAR_IDX] % 100 != 0 || timestamp[YEAR_IDX] % 400 == 0)) {
+            // Leap year consideration.
+            timestamp[DAY_IDX] = 29;
+          }
+          else {
+            timestamp[DAY_IDX] = 28;
+          }
+          timestamp[MONTH_IDX] = 2;
+          break;
+        case (4):
+          // April, move back to March
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 3;
+          break;
+        case (5):
+          // May, move back to April
+          timestamp[DAY_IDX] = 30;
+          timestamp[MONTH_IDX] = 4;
+          break;
+        case (6):
+          // June, move back to May
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 5;
+          break;
+        case (7):
+          // July, move back to June
+          timestamp[DAY_IDX] = 30;
+          timestamp[MONTH_IDX] = 6;
+          break;
+        case (8):
+          // August, move back to July
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 7;
+          break;
+        case (9):
+          // September, move back to August
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 8;
+          break;
+        case (10):
+          // October, move back to September
+          timestamp[DAY_IDX] = 30;
+          timestamp[MONTH_IDX] = 9;
+          break;
+        case (11):
+          // November, move back to October
+          timestamp[DAY_IDX] = 31;
+          timestamp[MONTH_IDX] = 10;
+          break;
+        case (12):
+          // December, move back to November
+          timestamp[DAY_IDX] = 30;
+          timestamp[MONTH_IDX] = 11;
+          break;
+        default:
+          break; 
+      }
+    }
+  }
+}
+
 // --------------------------------------------
 // Main Code
 // --------------------------------------------
 
 void setup() {
-  Serial.begin(115200); // Baud rate set to 115200
-  pinMode(BUTTON, INPUT_PULLUP);  // Button is active-low
+  Serial.begin(115200);                 // Baud rate set to 115200
+  pinMode(BUTTON, INPUT_PULLUP);        // Button is active-low
+  pinMode(I2S_SEL, OUTPUT);             // Channel mode pin
+  digitalWrite(I2S_SEL, MIC_LEFT_CH);  // List for audio on the mic's left channel
 
   // Attach the interrupt function to the active-low button.
   attachInterrupt(digitalPinToInterrupt(BUTTON), handleButtonInterrupt, FALLING);
@@ -115,15 +208,20 @@ void setup() {
     delay(1000);
   }
   Serial.println("Successfully initialized GPS module.");
-
   gpsModule.enablePower();
 
   // Use GPS, Chinese system (Beidou), and Russian satellite system (GLONASS)
   // together. 
   gpsModule.setGnss(eGPS_BeiDou_GLONASS);
-
   gpsModule.setRgbOn();
 
+  // Microphone Initialization
+  // while(microphone.begin(AUDIO_SAMPLING_RATE, AUDIO_DATA_BIT_SIZE) != 0) {
+  //   Serial.println("Failed to initialize microphone.");
+  // } 
+  // Serial.println("Successfully initialized microphone.");
+
+  // Set data collection flag to true. 
   isReadyToCollectData = true;
 }
 
@@ -133,12 +231,14 @@ void loop() {
     // Collect timestamp.
     sTim_t utc = gpsModule.getUTC();
     sTim_t date = gpsModule.getDate();
-    timestamp[0] = date.year;
-    timestamp[1] = date.month;
-    timestamp[2] = date.date;
-    timestamp[3] = utc.hour + OFFSET_FROM_GMT;
-    timestamp[4] = utc.minute;
-    timestamp[5] = utc.second;
+    timestamp[YEAR_IDX] = date.year;
+    timestamp[MONTH_IDX] = date.month;
+    timestamp[DAY_IDX] = date.date;
+    timestamp[HOUR_IDX] = utc.hour;
+    timestamp[MINUTE_IDX] = utc.minute;
+    timestamp[SECOND_IDX] = utc.second;
+
+    adjustTimestampToCST();
 
     // Format timestamp.
     sprintf(dataPacket.timestampCST, "%04d-%02d-%02d %02d:%02d:%02d", timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]);
@@ -146,14 +246,33 @@ void loop() {
     // Collect latitude, longitude, and altitude from GPS.
     sLonLat_t latData = gpsModule.getLat();
     sLonLat_t longData = gpsModule.getLon();
-    dataPacket.latDegrees = latData.latitudeDegree;
-    dataPacket.longDegrees = longData.lonitudeDegree;
+
+    // Northern and Southern Hemisphere checking for coordinates.
+    if (latData.latDirection == 'N') {
+      // Northern hemisphere, so latitude is positive.
+      dataPacket.latDegrees = latData.latitudeDegree;
+    }
+    else if (latData.latDirection == 'S') {
+      // Southern hemisphere, so latitude is negative.
+      dataPacket.latDegrees = -1 * latData.latitudeDegree;
+    }
+
+    // Eastern and Western Hemisphere checking for coordinates.
+    if (longData.lonDirection == 'E') {
+      // Eastern hemisphere, so longitude is positive.
+      dataPacket.longDegrees = longData.lonitudeDegree;
+    }
+    else if (longData.lonDirection == 'W'){
+      // Western hemisphere, so longituide is negative.
+      dataPacket.longDegrees = -1 * longData.lonitudeDegree;
+    }
+
     dataPacket.altitudeM = gpsModule.getAlt();
 
     String dataRecord = "{\"timestamp_cst\":\"" + String(dataPacket.timestampCST) + "\"," +
-                        "\"lat_degrees:\":" + String(dataPacket.latDegrees) + "," +
-                        "\"long_degrees:\":" + String(dataPacket.longDegrees) + "," + 
-                        "\"alt_meters:\":" + String(dataPacket.altitudeM) + ",}";
+                        "\"lat_degrees:\":" + String(dataPacket.latDegrees, 5) + "," +
+                        "\"long_degrees:\":" + String(dataPacket.longDegrees, 5) + "," + 
+                        "\"alt_meters:\":" + String(dataPacket.altitudeM, 5) + ",}";
 
     if (isButtonPressed && isDeviceConnected) {
       Serial.println("Button pressed.");

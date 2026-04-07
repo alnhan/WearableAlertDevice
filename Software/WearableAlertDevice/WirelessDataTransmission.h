@@ -5,6 +5,8 @@
 * @author Alex Ho
 * @2026 University of Oklahoma
 */
+
+#pragma once
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
