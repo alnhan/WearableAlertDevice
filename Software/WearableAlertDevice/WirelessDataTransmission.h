@@ -11,8 +11,13 @@
 #include <BLEUtils.h>
 #include <BLEServer.h>
 #include <BLE2902.h>
+#include <Arduino.h>
+#include "config.h"
 
-BLEServer *wadServer;
-BLEService *wadService;
-BLECharacteristic *wadCharacteristic;
-BLEAdvertising *wadAdvertising;
+extern BLEServer *wadServer;
+extern BLEService *wadService;
+extern BLECharacteristic *wadCharacteristic;
+extern BLEAdvertising *wadAdvertising;
+extern bool isDeviceConnected;
+
+void initWirelessDataTransmission();

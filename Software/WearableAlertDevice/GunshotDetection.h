@@ -9,3 +9,10 @@
 #pragma once
 #include "config.h"
 #include <arduinoFFT.h>
+#include <math.h>
+
+struct AudioBuffer {
+
+};
+
+void collectAudioSampleDBSPL();

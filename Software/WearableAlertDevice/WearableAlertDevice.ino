@@ -5,11 +5,10 @@
 * @author Alex Ho
 * @2026 University of Oklahoma
 */
-
+#pragma once
 #include <stdio.h>
 #include "config.h"
 #include "DFRobot_GNSS.h"
-#include "DFrobot_MSM261.h"
 #include "GunshotDetection.h"
 #include "WirelessDataTransmission.h"
 
@@ -29,34 +28,11 @@ struct DataPacket {
 };
 
 DFRobot_GNSS_I2C gpsModule(&Wire, GNSS_DEVICE_ADDR);
-DFRobot_Microphone microphone(I2S_SCK, I2S_WS, I2S_DO);
+//DFRobot_Microphone microphone(I2S_SCK, I2S_WS, I2S_DO);
 int16_t timestamp[6];
 DataPacket dataPacket;
 volatile bool isButtonPressed;
-bool isDeviceConnected;
 bool isReadyToCollectData;
-
-/*
-* Tracks whether a phone or computer is connected to the Wearable Alert Device.
-*
-*/
-class WADServerCallbacks : public BLEServerCallbacks {
-  
-  // A device has connected to WAD.
-  // Set flag to true to indicate connection.
-  void onConnect(BLEServer* pServer) {
-    Serial.println("A device has connected to the WAD.");
-    isDeviceConnected = true;
-  }
-
-  // Device has disconnected from WAD.
-  // Set flag to false to indicate disconnection and restart BLE advertising.
-  void onDisconnect(BLEServer* pServer) {
-    Serial.println("A device has disconnected from the WAD.");
-    isDeviceConnected = false;
-    BLEDevice::startAdvertising();
-  }
-};
 
 /*
 * Handles the state of the button when it is pressed.
@@ -167,8 +143,7 @@ void adjustTimestampToCST() {
 void setup() {
   Serial.begin(115200);                 // Baud rate set to 115200
   pinMode(BUTTON, INPUT_PULLUP);        // Button is active-low
-  pinMode(I2S_SEL, OUTPUT);             // Channel mode pin
-  digitalWrite(I2S_SEL, MIC_LEFT_CH);  // List for audio on the mic's left channel
+  pinMode(MIC_PIN, INPUT_PULLDOWN);     // Microphone
 
   // Attach the interrupt function to the active-low button.
   attachInterrupt(digitalPinToInterrupt(BUTTON), handleButtonInterrupt, FALLING);
@@ -177,30 +152,8 @@ void setup() {
   isDeviceConnected = false;
   isReadyToCollectData = false;
 
-  // Bluetooth Initialization
-  BLEDevice::init(BLE_SERVER_NAME);
-  BLEDevice::setMTU(MTU_SIZE);
-
-  // Create BLE Server.
-  wadServer = BLEDevice::createServer();
-
-  // Create BLE Service.
-  wadService = wadServer->createService(SERVICE_UUID);
-
-  // Add BLE callback functions to the server.
-  wadServer->setCallbacks(new WADServerCallbacks());
-
-  // Create BLE Characteristics.
-  wadCharacteristic = wadService->createCharacteristic(CHARACTERISTIC_UUID, BLECharacteristic::PROPERTY_READ | BLECharacteristic::PROPERTY_NOTIFY);
-  wadCharacteristic->addDescriptor(new BLE2902());
-
-  // Start the BLE service.
-  wadService->start();
-
-  // Start advertising the WAD as a connectable BLE device.
-  wadAdvertising = BLEDevice::getAdvertising();
-  wadAdvertising->addServiceUUID(SERVICE_UUID);
-  BLEDevice::startAdvertising();
+  // Initialize wireless data tranmission for Wearable Alert Device.
+  initWirelessDataTransmission();
 
   // GPS Module Initialization
   while(!gpsModule.begin()) {
@@ -209,17 +162,8 @@ void setup() {
   }
   Serial.println("Successfully initialized GPS module.");
   gpsModule.enablePower();
-
-  // Use GPS, Chinese system (Beidou), and Russian satellite system (GLONASS)
-  // together. 
-  gpsModule.setGnss(eGPS_BeiDou_GLONASS);
+  gpsModule.setGnss(eGPS_BeiDou_GLONASS);  // Use GPS, Chinese system (Beidou), and Russian satellite system (GLONASS) together. 
   gpsModule.setRgbOn();
-
-  // Microphone Initialization
-  // while(microphone.begin(AUDIO_SAMPLING_RATE, AUDIO_DATA_BIT_SIZE) != 0) {
-  //   Serial.println("Failed to initialize microphone.");
-  // } 
-  // Serial.println("Successfully initialized microphone.");
 
   // Set data collection flag to true. 
   isReadyToCollectData = true;
@@ -267,7 +211,12 @@ void loop() {
       dataPacket.longDegrees = -1 * longData.lonitudeDegree;
     }
 
-    dataPacket.altitudeM = gpsModule.getAlt();
+    // Algorithm for averaging altitude measurement for better accuracy.
+    dataPacket.altitudeM = 0.0;
+    for (int sample = 0; sample < NUM_ALTITUDE_SAMPLES; sample++) {
+      dataPacket.altitudeM += gpsModule.getAlt();
+    }
+    dataPacket.altitudeM /= NUM_ALTITUDE_SAMPLES;
 
     String dataRecord = "{\"timestamp_cst\":\"" + String(dataPacket.timestampCST) + "\"," +
                         "\"lat_degrees:\":" + String(dataPacket.latDegrees, 5) + "," +
