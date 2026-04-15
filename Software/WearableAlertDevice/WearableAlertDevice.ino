@@ -24,15 +24,18 @@ struct DataPacket {
   double altitudeM;
   int maxAudioReadingdB;
   bool gunshotDetected;
-  bool callEmergencyResponders;
+  volatile bool callEmergencyResponders;
 };
 
 DFRobot_GNSS_I2C gpsModule(&Wire, GNSS_DEVICE_ADDR);
 //DFRobot_Microphone microphone(I2S_SCK, I2S_WS, I2S_DO);
 int16_t timestamp[6];
 DataPacket dataPacket;
+AudioCircularBuffer audioBufferV;
+AudioCircularBuffer audioBufferdB;
 volatile bool isButtonPressed;
 bool isReadyToCollectData;
+int gpsUpdateCounter;
 
 /*
 * Handles the state of the button when it is pressed.
@@ -139,7 +142,6 @@ void adjustTimestampToCST() {
 // --------------------------------------------
 // Main Code
 // --------------------------------------------
-
 void setup() {
   Serial.begin(115200);                 // Baud rate set to 115200
   pinMode(BUTTON, INPUT_PULLUP);        // Button is active-low
@@ -151,6 +153,9 @@ void setup() {
   isButtonPressed = false;
   isDeviceConnected = false;
   isReadyToCollectData = false;
+  dataPacket.gunshotDetected = false;
+  dataPacket.callEmergencyResponders = false;
+  gpsUpdateCounter = MAX_GPS_UPDATE_COUNTER_VALUE;
 
   // Initialize wireless data tranmission for Wearable Alert Device.
   initWirelessDataTransmission();
@@ -171,65 +176,99 @@ void setup() {
 
 void loop() {
   if (isReadyToCollectData) {
+    if (gpsUpdateCounter == MAX_GPS_UPDATE_COUNTER_VALUE) {
+      // It has been about 1 second since GPS data last updated.
+      // Update GPS data.
+      // Collect timestamp.
+      sTim_t utc = gpsModule.getUTC();
+      sTim_t date = gpsModule.getDate();
+      timestamp[YEAR_IDX] = date.year;
+      timestamp[MONTH_IDX] = date.month;
+      timestamp[DAY_IDX] = date.date;
+      timestamp[HOUR_IDX] = utc.hour;
+      timestamp[MINUTE_IDX] = utc.minute;
+      timestamp[SECOND_IDX] = utc.second;
 
-    // Collect timestamp.
-    sTim_t utc = gpsModule.getUTC();
-    sTim_t date = gpsModule.getDate();
-    timestamp[YEAR_IDX] = date.year;
-    timestamp[MONTH_IDX] = date.month;
-    timestamp[DAY_IDX] = date.date;
-    timestamp[HOUR_IDX] = utc.hour;
-    timestamp[MINUTE_IDX] = utc.minute;
-    timestamp[SECOND_IDX] = utc.second;
+      adjustTimestampToCST();
 
-    adjustTimestampToCST();
+      // Format timestamp.
+      sprintf(dataPacket.timestampCST, "%04d-%02d-%02d %02d:%02d:%02d", timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]);
 
-    // Format timestamp.
-    sprintf(dataPacket.timestampCST, "%04d-%02d-%02d %02d:%02d:%02d", timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]);
+      // Collect latitude, longitude, and altitude from GPS.
+      sLonLat_t latData = gpsModule.getLat();
+      sLonLat_t longData = gpsModule.getLon();
 
-    // Collect latitude, longitude, and altitude from GPS.
-    sLonLat_t latData = gpsModule.getLat();
-    sLonLat_t longData = gpsModule.getLon();
+      // Northern and Southern Hemisphere checking for coordinates.
+      if (latData.latDirection == 'N') {
+        // Northern hemisphere, so latitude is positive.
+        dataPacket.latDegrees = latData.latitudeDegree;
+      }
+      else if (latData.latDirection == 'S') {
+        // Southern hemisphere, so latitude is negative.
+        dataPacket.latDegrees = -1 * latData.latitudeDegree;
+      }
 
-    // Northern and Southern Hemisphere checking for coordinates.
-    if (latData.latDirection == 'N') {
-      // Northern hemisphere, so latitude is positive.
-      dataPacket.latDegrees = latData.latitudeDegree;
+      // Eastern and Western Hemisphere checking for coordinates.
+      if (longData.lonDirection == 'E') {
+        // Eastern hemisphere, so longitude is positive.
+        dataPacket.longDegrees = longData.lonitudeDegree;
+      }
+      else if (longData.lonDirection == 'W'){
+        // Western hemisphere, so longituide is negative.
+        dataPacket.longDegrees = -1 * longData.lonitudeDegree;
+      }
+
+      // Algorithm for averaging altitude measurement for better accuracy.
+      dataPacket.altitudeM = 0.0;
+      for (int sample = 0; sample < NUM_ALTITUDE_SAMPLES; sample++) {
+        dataPacket.altitudeM += gpsModule.getAlt();
+      }
+      dataPacket.altitudeM /= NUM_ALTITUDE_SAMPLES;
+
+      // Reset update counter.
+      gpsUpdateCounter = 0;
     }
-    else if (latData.latDirection == 'S') {
-      // Southern hemisphere, so latitude is negative.
-      dataPacket.latDegrees = -1 * latData.latitudeDegree;
-    }
+    // Collect a new audio sample.
+    collectAudioSample(audioBufferV, audioBufferdB);
 
-    // Eastern and Western Hemisphere checking for coordinates.
-    if (longData.lonDirection == 'E') {
-      // Eastern hemisphere, so longitude is positive.
-      dataPacket.longDegrees = longData.lonitudeDegree;
-    }
-    else if (longData.lonDirection == 'W'){
-      // Western hemisphere, so longituide is negative.
-      dataPacket.longDegrees = -1 * longData.lonitudeDegree;
-    }
+    // Determine the new max audio reading.
+    dataPacket.maxAudioReadingdB = (int)(findMaxDBReading(audioBufferdB));
 
-    // Algorithm for averaging altitude measurement for better accuracy.
-    dataPacket.altitudeM = 0.0;
-    for (int sample = 0; sample < NUM_ALTITUDE_SAMPLES; sample++) {
-      dataPacket.altitudeM += gpsModule.getAlt();
-    }
-    dataPacket.altitudeM /= NUM_ALTITUDE_SAMPLES;
+    Serial.println(dataPacket.maxAudioReadingdB);
 
+    // Peak Detection.
+    dataPacket.gunshotDetected = peakDetection(dataPacket.maxAudioReadingdB);
+
+    // Format data in JSON format.
     String dataRecord = "{\"timestamp_cst\":\"" + String(dataPacket.timestampCST) + "\"," +
                         "\"lat_degrees:\":" + String(dataPacket.latDegrees, 5) + "," +
                         "\"long_degrees:\":" + String(dataPacket.longDegrees, 5) + "," + 
-                        "\"alt_meters:\":" + String(dataPacket.altitudeM, 5) + ",}";
+                        "\"alt_meters:\":" + String(dataPacket.altitudeM, 2) + "," +
+                        "\"max_dB_reading:\":" + String(dataPacket.maxAudioReadingdB) + ",";
 
-    if (isButtonPressed && isDeviceConnected) {
+    if (dataPacket.gunshotDetected) {
+      dataRecord += "\"gunshot_detected\":true,"; 
+    }
+    else {
+      dataRecord += "\"gunshot_detected\":false,";
+    }
+    
+    dataRecord += "\"call_responders\":true}";
+
+    // Send data if button is pressed or gunshot has been detected.
+    if ((isButtonPressed || dataPacket.gunshotDetected) && isDeviceConnected) {
       Serial.println("Button pressed.");
+      dataPacket.callEmergencyResponders = true;
       wadCharacteristic->setValue((unsigned char*)dataRecord.c_str(), dataRecord.length());
       wadCharacteristic->notify();
       isButtonPressed = false;
     }
-  }
 
-  delay(1000);
+    dataPacket.callEmergencyResponders = false;
+
+    // Increment GPS update counter.
+    gpsUpdateCounter += 1;
+
+    delayMicroseconds((int)((1.0 / SAMPLING_RATE_HZ) * MICROSEC_PER_SEC));
+  }
 }

@@ -35,6 +35,9 @@ class WADServerCallbacks : public BLEServerCallbacks {
   }
 };
 
+// --------------------------------------------
+// Function Definitions
+// --------------------------------------------
 /*
 * Initialize the wireless data transmission
 * functionality for the Wearable Alert Device.

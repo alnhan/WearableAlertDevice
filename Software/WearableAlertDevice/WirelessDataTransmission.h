@@ -7,12 +7,12 @@
 */
 
 #pragma once
+#include "config.h"
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
 #include <BLE2902.h>
 #include <Arduino.h>
-#include "config.h"
 
 extern BLEServer *wadServer;
 extern BLEService *wadService;
@@ -20,4 +20,7 @@ extern BLECharacteristic *wadCharacteristic;
 extern BLEAdvertising *wadAdvertising;
 extern bool isDeviceConnected;
 
+// --------------------------------------------
+// Function Declarations
+// --------------------------------------------
 void initWirelessDataTransmission();
