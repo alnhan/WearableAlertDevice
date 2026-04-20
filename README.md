@@ -30,6 +30,10 @@ of the major components of the software.
 
 # Downloading Arduino IDE
 
+For this Capstone project, the Arduino IDE was used as the software development environment.
+The Arduino IDE can be downloaded [here](https://www.arduino.cc/en/software/). Ensure that 
+some version of Arduino IDE 2.0 is downloaded, not the legacy Arduino IDE 1.0. 
+
 Back to [Table of Contents](#table-of-contents)
 
 # Initial Environment Setup
