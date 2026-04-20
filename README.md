@@ -1,7 +1,7 @@
 # OU ECE Senior Capstone Project: Wearable Alert Device
-Spring 2026 Semester
+Semester: Spring 2026
 
-Team Members:
+<ins>Team Members:<ins>
 
 Project Manager - Jonas Wollman
 
@@ -12,4 +12,4 @@ Hardware Engineer - Cody Chan
 Software Engineer - Alex Ho
 
 # Overview
-Hardware and Software files for the OU Capstone Wearable Alert Device project.
+This repository contains all project files pertaining to the Wearable Alert Device project. 
