@@ -17,16 +17,16 @@ provides guidance for setting up the software development environment as well as
 of the major components of the software.
 
 # Table of Contents
-1. [Downloading Arduino IDE](#arduino-ide)
-2. [Initial Environment Setup](#dev-environment-setup)
-   - [Arduino Nano ESP32 Board Package Installation](#board-package-installation)
-   - [Pin Numbering Setting Configuration](#pin-numbering)
-   - [Required Library Dependencies](#dependencies)
-4. [Software Development](#software-dev)
-   - [WearableAlertDevice.ino](#wearable-alert-device-ino)
-   - [config.h](#config-h)
-   - [WirelessDataTransmission.h/.cpp](#wireless-data-transmission)
-   - [GunshotDetection.h/.cpp](#gunshot-detection)
+1. [Downloading Arduino IDE](#downloading-arduino-ide)
+2. [Initial Environment Setup](#initial-environment-setup)
+   - [Arduino Nano ESP32 Board Package Installation](#arduino-nano-esp32-board-package-installation)
+   - [Pin Numbering Setting Configuration](#pin-numbering-setting-configuration)
+   - [Required Library Dependencies](#required-library-dependencies)
+4. [Software Development](#software-development)
+   - [WearableAlertDevice.ino](#wearablealertdeviceino)
+   - [config.h](#configh)
+   - [WirelessDataTransmission.h/.cpp](#wirelessdatatransmissionhcpp)
+   - [GunshotDetection.h/.cpp](#gunshotdetectionhcpp)
 
 # Downloading Arduino IDE
 
@@ -57,6 +57,10 @@ Back to [Table of Contents](#table-of-contents)
 Back to [Table of Contents](#table-of-contents)
 
 ## WearableAlertDevice.ino
+
+Back to [Table of Contents](#table-of-contents)
+
+## config.h
 
 Back to [Table of Contents](#table-of-contents)
 
