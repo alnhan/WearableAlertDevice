@@ -23,6 +23,11 @@ struct AudioCircularBuffer {
   double buffer[NUM_BUFFER_SAMPLES];
 };
 
+extern double frequencyDataReal[NUM_BUFFER_SAMPLES];  // To contain the audio signal in frequency domain (real values).
+extern double frequencyDataImag[NUM_BUFFER_SAMPLES];  // To contain the audio signal in frequency domain (imaginary values).
+extern double zeroArray[NUM_BUFFER_SAMPLES];          // Array of 0's
+extern ArduinoFFT<double> FFT;
+
 // --------------------------------------------
 // Function Declarations
 // --------------------------------------------

@@ -8,6 +8,11 @@
 
 #include "GunshotDetection.h"
 
+extern double frequencyDataReal[NUM_BUFFER_SAMPLES] = {};
+extern double frequencyDataImag[NUM_BUFFER_SAMPLES] = {};
+extern double zeroArray[NUM_BUFFER_SAMPLES] = {};
+extern ArduinoFFT<double> FFT = ArduinoFFT<double>(frequencyDataReal, frequencyDataImag, NUM_BUFFER_SAMPLES, SAMPLING_RATE_HZ);
+
 // --------------------------------------------
 // Function Definitions
 // --------------------------------------------

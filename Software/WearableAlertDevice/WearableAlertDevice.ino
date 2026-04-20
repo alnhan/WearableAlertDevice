@@ -28,7 +28,6 @@ struct DataPacket {
 };
 
 DFRobot_GNSS_I2C gpsModule(&Wire, GNSS_DEVICE_ADDR);
-//DFRobot_Microphone microphone(I2S_SCK, I2S_WS, I2S_DO);
 int16_t timestamp[6];
 DataPacket dataPacket;
 AudioCircularBuffer audioBufferV;
@@ -234,10 +233,59 @@ void loop() {
     // Determine the new max audio reading.
     dataPacket.maxAudioReadingdB = (int)(findMaxDBReading(audioBufferdB));
 
-    Serial.println(dataPacket.maxAudioReadingdB);
+    //Serial.println(dataPacket.maxAudioReadingdB);
 
     // Peak Detection.
-    dataPacket.gunshotDetected = peakDetection(dataPacket.maxAudioReadingdB);
+    if(peakDetection(dataPacket.maxAudioReadingdB)) {
+      // dB level spiked above threshold, possible gunshot detected.
+      // Perform further analysis to determine if it is actually a gunshot.
+
+      // Clear all values from the frequency data (imaginary values).
+      memcpy(frequencyDataImag, zeroArray, NUM_BUFFER_SAMPLES * sizeof(double));
+
+      // Copy raw RMS voltage from audio buffer to the array of frequency data (real values).
+      if (audioBufferV.headIdx == 0 && audioBufferV.tailIdx == NUM_BUFFER_SAMPLES - 1) {
+        // No array partitions needed, just copy the entire array.
+        memcpy(frequencyDataReal, audioBufferV.buffer, NUM_BUFFER_SAMPLES * sizeof(double));
+      }
+      else if (audioBufferV.tailIdx < audioBufferV.headIdx) {
+        // Array partitions needed to properly copy data.
+        int firstPartitionSize = NUM_BUFFER_SAMPLES - audioBufferV.headIdx + 1;
+        int secondPartitionSize = NUM_BUFFER_SAMPLES - firstPartitionSize;
+
+        memcpy(&frequencyDataReal[0], &audioBufferV.buffer[audioBufferV.headIdx], (firstPartitionSize) * sizeof(double));
+        memcpy(&frequencyDataReal[firstPartitionSize - 1], &audioBufferV.buffer[0], (secondPartitionSize) * sizeof(double));
+      }
+      else if (audioBufferV.headIdx < audioBufferV.tailIdx) {
+        // Audio buffer is not entirely full yet.
+        int numElements = audioBufferV.tailIdx - audioBufferV.headIdx + 1;
+        memcpy(&frequencyDataReal[0], &audioBufferV.buffer[0], (numElements) * sizeof(double));
+      }
+
+      // Apply Hamming window function.
+      FFT.windowing(FFTWindow::Hamming, FFTDirection::Forward);
+
+      // Compute the Fast Fourier Transform.
+      FFT.compute(FFTDirection::Forward);
+
+      // Calculate the magnitudes of the complex numbers in the frequency content.
+      FFT.complexToMagnitude();
+
+      // Extract the dominant frequency in Hz.
+      double dominantFrequencyHz = FFT.majorPeak();
+      
+      // Check if dominant frequency is under the threshold frequency for a muzzle blast. 
+      if (0.0 < dominantFrequencyHz && dominantFrequencyHz < GUNSHOT_THRESHOLD_HZ) {
+        Serial.print("Dominant Frequency: ");
+        Serial.println(dominantFrequencyHz, 5);
+        dataPacket.gunshotDetected = true;
+        dataPacket.callEmergencyResponders = true;
+      }
+      else {
+        dataPacket.gunshotDetected = false;
+        dataPacket.callEmergencyResponders = false;
+      }
+    }
 
     // Format data in JSON format.
     String dataRecord = "{\"timestamp_cst\":\"" + String(dataPacket.timestampCST) + "\"," +
@@ -252,18 +300,22 @@ void loop() {
     else {
       dataRecord += "\"gunshot_detected\":false,";
     }
-    
-    dataRecord += "\"call_responders\":true}";
+
+    if (dataPacket.callEmergencyResponders) {
+      dataRecord += "\"call_responders\":true}";
+    }
+    else {
+      dataRecord += "\"call_responders\":false}";
+    }
 
     // Send data if button is pressed or gunshot has been detected.
     if ((isButtonPressed || dataPacket.gunshotDetected) && isDeviceConnected) {
-      Serial.println("Button pressed.");
+      Serial.println("Data Transmitted.");
       dataPacket.callEmergencyResponders = true;
       wadCharacteristic->setValue((unsigned char*)dataRecord.c_str(), dataRecord.length());
       wadCharacteristic->notify();
       isButtonPressed = false;
     }
-
     dataPacket.callEmergencyResponders = false;
 
     // Increment GPS update counter.

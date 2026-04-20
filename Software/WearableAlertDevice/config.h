@@ -8,10 +8,6 @@
 
 #define BUTTON 17
 // ----------------------------------
-// DATA PACKET SETTINGS
-// ----------------------------------
-
-// ----------------------------------
 // I2C AND GPS MODULE SETTINGS
 // ----------------------------------
 #define YEAR_IDX 0
@@ -40,7 +36,8 @@
 #define SOUND_PRESSURE_REF_PA 0.00002
 #define NOISE_FLOOR_LEVEL_DB 15
 #define NUM_BUFFER_SAMPLES 16
-#define GUNSHOT_THRESHOLD_DB 70
+#define GUNSHOT_THRESHOLD_DB 75
+#define GUNSHOT_THRESHOLD_HZ 500.0
 
 // Bluetooth
 #define SERVICE_UUID "3098A182-02B0-4A35-889A-93B71E1748B9"
