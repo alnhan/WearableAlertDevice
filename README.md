@@ -60,6 +60,6 @@ Back to [Table of Contents](#table-of-contents)
 
 Back to [Table of Contents](#table-of-contents)
 
-## GunshotDetection.h/.cpp
+## GunshotDetection.h/.cpp(#gunshot-detection)
 
 Back to [Table of Contents](#table-of-contents)
