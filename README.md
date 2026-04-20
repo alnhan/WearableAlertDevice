@@ -29,7 +29,6 @@ of the major components of the software.
    - [GunshotDetection.h/.cpp](#gunshotdetectionhcpp)
 
 # Downloading Arduino IDE
-
 For this Capstone project, the Arduino IDE was used as the software development environment.
 The Arduino IDE can be downloaded [here](https://www.arduino.cc/en/software/). Ensure that 
 some version of Arduino IDE 2.0 is downloaded, not the legacy Arduino IDE 1.0. 
@@ -37,10 +36,15 @@ some version of Arduino IDE 2.0 is downloaded, not the legacy Arduino IDE 1.0.
 Back to [Table of Contents](#table-of-contents)
 
 # Initial Environment Setup
+Once the Arduino IDE has been installed, some initial setup in its environment is needed before code can be correctly
+uploaded into the Arduino Nano ESP32 microcontroller. There are three important parts to the setup: installing the Arduino
+Nano ESP32 board package, setting the pin numbering to GPIO numbers, and installing library dependencies. 
 
 Back to [Table of Contents](#table-of-contents)
 
 ## Arduino Nano ESP32 Board Package Installation
+The first stage of the environment setup is installing the proper board package so that code can be correctly
+uploaded into Arduino Nano ESP32 microcontrollers.
 
 Back to [Table of Contents](#table-of-contents)
 
