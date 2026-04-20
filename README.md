@@ -2,9 +2,13 @@
 Spring 2026 Semester
 
 Team Members:
+
 Project Manager - Jonas Wollman
+
 Hardware Engineer - Ryan Kiesau
+
 Hardware Engineer - Cody Chan
+
 Software Engineer - Alex Ho
 
 # Overview
