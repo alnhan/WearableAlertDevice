@@ -54,12 +54,16 @@ The first stage of the environment setup is installing the proper board package 
 code and upload programs for Arduino Nano ESP32 microcontrollers. In the Arduino IDE, look on the left for the Boards Manager 
 tab. Click on the Boards Manager tab to open it up.
 
-(insert pic here)
+![Screenshot of Boards Manager tab in the Arduino IDE (circled in red).](./readme_images/boards-manager-tab.png)
+
+Screenshot of Boards Manager tab in the Arduino IDE (circled in red).
 
 In the search bar, type "Arduino ESP32 Boards." This package will contain the settings to recognize Arduino Nano ESP32
 hardware. Select the Install button if the package is not already installed.
 
-(insert pic here)
+![Screenshot of the Arduino ESP32 Boards package not installed yet.](./readme_images/esp32-board-package.png)
+
+Screenshot of the Arduino ESP32 Boards package not installed yet.
 
 Once the package has been installed, the Arduino IDE will automatically install all the common software libraries associated with 
 ESP32 microcontrollers, such as WiFi, Bluetooth, etc. No additional steps are needed to install these libraries.
@@ -67,11 +71,39 @@ ESP32 microcontrollers, such as WiFi, Bluetooth, etc. No additional steps are ne
 Back to [Table of Contents](#table-of-contents)
 
 ## Pin Numbering Setting Configuration
-NOTE: The software developed 
+The software developed for this project has been written specifically to use the Arduino Nano ESP32's GPIO numbers, not the 
+standard Arduino pin numbers that are labeled on the physical device. **NOTE: IF THE PIN NUMBERING IS SET TO ARDUINO PIN NUMBERS 
+INSTEAD OF GPIO NUMBERS, THERE WILL BE A GOOD CHANCE THAT INCORRECT PINS ON THE MICROCONTROLLER WILL BE USED BY THE SOFTWARE,
+WHICH WILL MOST LIKELY PREVENT THE HARDWARE FROM FUNCTIONING PROPERLY.**
+
+To change the pin numbering setting in the Arduino IDE, navigate to `Tools >> Pin Numbering` at the ribbon near the top of the IDE. 
+In the `Pin Numbering` setting, there will be two options: `By Arduino pin (default)` and `By GPIO number (legacy)`. Set the `Pin Numbering`
+setting to the `By GPIO number (legacy)` option.
+
+![Pin Numbering setting](./readme_images/gpio-pin-numbering.png)
+
+Screenshot of Pin Numbering setting being set to the "By GPIO number (legacy)" option. The Pin Numbering setting can be found in the
+Tools tab in the ribbon near the top of the IDE.
 
 Back to [Table of Contents](#table-of-contents)
 
 ## Required Library Dependencies
+There are a few open-source libraries that the software relies on for its functionality. These external libraries are not automatically
+installed by the Arduino IDE and will have to be installed manually. Below is a list of the open-source libraries:
+
+1. [DFRobot_GNSS](https://github.com/DFRobot/DFRobot_GNSS) by DFRobot
+2. [arduinoFFT](https://github.com/kosme/arduinoFFT) by kosme
+
+The libraries can be downloaded by using the GitHub links above, or they can also be found in the `Software/dependencies` folder for
+this project.
+
+Once these libraries are downloaded, they need to be installed manually into the Arduino IDE. Navigate to `Sketch >> Include Library >> 
+Add .ZIP Library...` at the ribbon near the top of the IDE. After clicking the `Add .ZIP Library` option, find the local `.zip` files 
+of the libraries and add them to the Arduino IDE. 
+
+![Add .ZIP Library](./readme_images/add-zip-library.png)
+
+Screenshot of the navigation to the "Add .ZIP Library..." option in the Arduino IDE.
 
 Back to [Table of Contents](#table-of-contents)
 
