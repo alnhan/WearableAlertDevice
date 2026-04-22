@@ -138,21 +138,40 @@ connected microcontroller. **For best practices, it is best to first press the `
 uploading new code to the microcontroller.**
 
 # Software Development
+The following section provides a general description of each of the software files. If further details are needed, comments and 
+documentation can be found within the software files themselves. 
 
 Back to [Table of Contents](#table-of-contents)
 
 ## WearableAlertDevice.ino
+`WearableAlertDevice.ino` is the main software file for this project. This file serves as the device's main source for functionality.
+The Arduino Nano ESP32 will look to this file for how to control the connected hardware. Functions and variables from supporting files 
+such as `config.h`, `WirelessDataTransmission.h`, and `GunshotDetection.h` can also be used by `WearableAlertDevice.ino`. 
 
 Back to [Table of Contents](#table-of-contents)
 
 ## config.h
+`config.h` contains all the adjustable settings for the Wearable Alert Device. Instead of going into each of the different software
+files to change certain settings, which can introduce potential bugs if not carefully done, these settings can be changed directly 
+in `config.h`, and those changes will automatically propagate throughout the rest of software. As a result, changing a specific setting
+for the Wearable Alert Device only requires changing a single value in `config.h`, and developers do not need to parse through all the
+complex code to change each instance of the setting that appears in the code.
 
 Back to [Table of Contents](#table-of-contents)
 
 ## WirelessDataTransmission.h/.cpp
+`WirelessDataTransmission.h` handles the software that wirelessly transmits the data from the Wearable Alert Device to a mobile app.
+For this project, Bluetooth Low-Energy was used as the protocol for transmitting data wirelessly. Thus, `WirelessDataTransmission.h`
+contains the software that initializes the microcontroller's Bluetooth Low-Energy module and handles when a mobile device connects
+or disconnects from the Wearable Alert Device. 
 
 Back to [Table of Contents](#table-of-contents)
 
 ## GunshotDetection.h/.cpp
+`GunshotDetection.h` handles the audio sampling and processing needed to detect a gunshot. This file creates all the necessary
+buffers that store audio samples collected by the microphone. In addition, the file also performs the mathematical conversions
+needed to convert the analog voltage from the microphone into a fairly accurate dB Sound Pressure Level reading. What is 
+important to note about `GunshotDetection.h` is that it includes the previously-mentioned `arduinoFFT` library, allowing 
+`WearableAlertDevice.ino` to use `arduinoFFT`'s frequency conversion and analysis functions. 
 
 Back to [Table of Contents](#table-of-contents)
