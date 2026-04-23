@@ -2,36 +2,38 @@
 	(version 20260101)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "e7135e90-054b-4581-8897-82526b4a9337")
+	(uuid "14187d19-330d-4101-840b-5d5efc602364")
 	(paper "A4")
 	(lib_symbols
-		(symbol "CCEW Wearable Alert Library:Fermion{colon}_MEMS_Microphone"
+		(symbol "Adafruit MicroLipo Charger v2-eagle-import:MCP73831/2"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "MEMS_Microphone_Analog"
-				(at 4.826 10.922 0)
+			(property "Reference" "U"
+				(at -10.16 11.43 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.27 1.0795)
 					)
+					(justify left bottom)
 				)
 			)
 			(property "Value" ""
-				(at 0 0 0)
+				(at -10.16 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.27 1.0795)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Adafruit MicroLipo Charger v2:SOT23-5"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -53,7 +55,7 @@
 					)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "MCP73831/2 LIPO Charger\n\n• VDD: 3.75 - 6V\n• Temp -40 - 85°C\n• Programmable Charge Rate: 15-500mA\n\nNOTE: STAT is a tri-state logic output on the MCP73831 and an open-drain output on the MCP73832.\n\nSOT23-5 with 4.2V output and tri-state logic on STAT = MCP73831T-2ACI/OT"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -64,236 +66,277 @@
 					)
 				)
 			)
-			(symbol "Fermion{colon}_MEMS_Microphone_0_1"
-				(rectangle
-					(start 0 8.89)
-					(end 10.16 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
 					)
 				)
 			)
-			(symbol "Fermion{colon}_MEMS_Microphone_1_1"
+			(symbol "MCP73831/2_1_0"
+				(polyline
+					(pts
+						(xy -10.16 10.16) (xy -10.16 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 10.16) (xy 10.16 10.16)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 5.08) (xy 10.16 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -5.08) (xy -10.16 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -10.16 -5.08) (xy -10.16 -10.16)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 10.16) (xy 10.16 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 5.08) (xy 10.16 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -5.08) (xy -10.16 -5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -5.08) (xy 10.16 -10.16)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 10.16 -10.16) (xy -10.16 -10.16)
+					)
+					(stroke
+						(width 0.254)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "VDD:"
+					(at -8.255 -7.62 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+						(justify left bottom)
+					)
+				)
+				(text "Temp:"
+					(at -8.255 -9.525 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+						(justify left bottom)
+					)
+				)
+				(text "LIPO Charger"
+					(at -6.35 6.35 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+						(justify left bottom)
+					)
+				)
+				(text "MCP73831/2"
+					(at -5.715 8.255 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+						(justify left bottom)
+					)
+				)
+				(text "3.75-6V"
+					(at 0 -7.62 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+						(justify left bottom)
+					)
+				)
+				(text "-40-85°C"
+					(at 0 -9.525 0)
+					(effects
+						(font
+							(size 1.27 1.0795)
+						)
+						(justify left bottom)
+					)
+				)
 				(pin output line
-					(at 1.27 -2.54 90)
+					(at -12.7 -2.54 0)
 					(length 2.54)
-					(name "A"
+					(name "STAT"
 						(effects
 							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 5.08 -2.54 90)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 8.89 -2.54 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "CCEW Wearable Alert Library:LIPO_Charger"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "LIPO_Charger"
-				(at 6.604 8.382 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "LIPO_Charger_0_1"
-				(rectangle
-					(start 0 6.35)
-					(end 12.7 0)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "LIPO_Charger_1_1"
-				(pin power_in line
-					(at 1.27 -2.54 90)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 3.81 -2.54 90)
+				(pin power_in line
+					(at 12.7 -2.54 180)
 					(length 2.54)
-					(name "D-"
+					(name "VSS"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 6.35 -2.54 90)
+				(pin power_in line
+					(at 12.7 2.54 180)
 					(length 2.54)
-					(name "D+"
+					(name "VBAT"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 					(number "3"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 				)
-				(pin power_out line
-					(at 8.89 -2.54 90)
+				(pin power_in line
+					(at -12.7 2.54 0)
 					(length 2.54)
-					(name "GND"
+					(name "VDD"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 					(number "4"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 				)
-				(pin bidirectional line
-					(at 11.43 -2.54 90)
+				(pin input line
+					(at 12.7 0 180)
 					(length 2.54)
-					(name "BAT"
+					(name "PROG"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
 					(number "5"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.524 1.524)
 							)
 						)
 					)
@@ -1921,28 +1964,26 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MIC2288_1"
+		(symbol "I2S_MEMS_Microphone_1"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "GPS"
-				(at 3.048 10.16 0)
+			(property "Reference" "I2S_MEMS_Mic"
+				(at 7.62 12.954 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Value" ""
-				(at 0 0 0)
+				(at -1.27 -12.19 0)
 				(show_name no)
 				(do_not_autoplace no)
-				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1950,7 +1991,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 0 0 0)
+				(at -1.27 -12.19 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1960,8 +2001,8 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.mouser.com/datasheet/3/282/1/MIC2288-1A-1.2MHz-PWM-Boost-Converter-DS20006034.pdf"
-				(at 8.128 -26.416 0)
+			(property "Datasheet" ""
+				(at -1.27 -12.19 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1971,8 +2012,8 @@
 					)
 				)
 			)
-			(property "Description" "1A, 1.2 MHz PWM Boost Converter"
-				(at 10.668 -22.86 0)
+			(property "Description" ""
+				(at -1.27 -12.19 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -1982,10 +2023,10 @@
 					)
 				)
 			)
-			(symbol "MIC2288_1_0_1"
+			(symbol "I2S_MEMS_Microphone_1_0_1"
 				(rectangle
-					(start 0 8.89)
-					(end 10.16 0)
+					(start 0 11.43)
+					(end 15.24 0)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1995,18 +2036,18 @@
 					)
 				)
 			)
-			(symbol "MIC2288_1_1_1"
-				(pin bidirectional line
+			(symbol "I2S_MEMS_Microphone_1_1_1"
+				(pin power_in line
 					(at 1.27 -2.54 90)
 					(length 2.54)
-					(name "SDA"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
+					(number ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2014,17 +2055,17 @@
 						)
 					)
 				)
-				(pin output line
+				(pin power_out line
 					(at 3.81 -2.54 90)
 					(length 2.54)
-					(name "SCL"
+					(name "3V3"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
+					(number ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2035,14 +2076,14 @@
 				(pin input line
 					(at 6.35 -2.54 90)
 					(length 2.54)
-					(name "GND"
+					(name "WS"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "3"
+					(number ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2050,17 +2091,53 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin input line
 					(at 8.89 -2.54 90)
 					(length 2.54)
-					(name "VCC"
+					(name "SEL"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "4"
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -2.54 90)
+					(length 2.54)
+					(name "SCK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 13.97 -2.54 90)
+					(length 2.54)
+					(name "DO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number ""
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2468,1772 +2545,919 @@
 	)
 	(text "Battery Voltage\n"
 		(exclude_from_sim no)
-		(at 107.442 37.084 0)
+		(at 103.632 37.084 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "22da442b-1164-4480-a8d0-5565adbd24e7")
-	)
-	(text "GPS Tracking\n"
-		(exclude_from_sim no)
-		(at 100.33 89.916 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "354dae3b-35d1-4e06-b045-da89befc446a")
-	)
-	(text "Emergency Button"
-		(exclude_from_sim no)
-		(at 211.836 105.41 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "66a958a1-3f69-4ab5-bc2b-aed138ee3770")
-	)
-	(text "Conversion for 3.7V to 5V"
-		(exclude_from_sim no)
-		(at 214.122 51.816 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "8870f16a-50bd-4cb7-864d-a9b7fe36aca7")
+		(uuid "2a968a21-b7b7-49f0-9cfa-dcf0524ebf20")
 	)
 	(text "Software Testing"
 		(exclude_from_sim no)
-		(at 211.074 90.424 0)
+		(at 188.976 90.17 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "8eb38427-a575-484b-a577-de92d72f9d0c")
+		(uuid "30128ff9-9206-4e58-8b8f-c6d31cb44344")
 	)
 	(text "Set Voltage to 5V"
 		(exclude_from_sim no)
-		(at 146.812 37.084 0)
+		(at 143.002 37.084 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "e12e6b26-6ba1-431f-b7b9-ff095740326c")
+		(uuid "7ae62ae5-a9b1-4207-b991-bbe3fd277cf7")
 	)
-	(text "Microphone Detection"
+	(text "Conversion for 3.7V to 5V"
 		(exclude_from_sim no)
-		(at 85.852 113.792 0)
+		(at 210.312 51.816 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "f249d482-14e8-4d6a-877f-35ba049eaee5")
+		(uuid "7b69ac07-6f7d-4409-abfe-dd4289f8fddb")
+	)
+	(text "Emergency Button"
+		(exclude_from_sim no)
+		(at 191.77 98.806 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8065cab0-1029-4a9f-9d89-d240371b6a3a")
 	)
 	(text "LIPO Charger"
 		(exclude_from_sim no)
-		(at 94.488 44.704 0)
+		(at 83.82 37.846 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
-		(uuid "ffa0cc23-58bc-450a-883f-76cce4824ab6")
+		(uuid "9fe8cbff-8720-44e3-8f94-060c795503cd")
+	)
+	(text "Microphone Detection"
+		(exclude_from_sim no)
+		(at 197.866 110.236 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "de3f6f01-dba7-4322-b2f5-115a8f9dade6")
 	)
 	(junction
-		(at 161.29 82.55)
+		(at 227.33 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "02f249a5-ab4e-4483-950f-20e6fbd57c49")
+		(uuid "02ed8d1f-f219-47bf-82ad-d8a8f462f75f")
 	)
 	(junction
-		(at 113.03 137.16)
+		(at 227.33 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "0f25491a-732b-49d2-b7e1-19ada32dd78e")
+		(uuid "2c5dfb80-d898-4368-a5e3-9df7218b781a")
 	)
 	(junction
-		(at 168.91 71.12)
+		(at 179.07 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2085bc2d-e043-4b50-92bf-b36aace10423")
+		(uuid "3e3c4643-9ef3-4883-b76f-9fe9fadc6843")
 	)
 	(junction
-		(at 182.88 54.61)
+		(at 124.46 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "2fa49c9e-2f24-42c8-b63d-0374f467af6f")
+		(uuid "45fe1607-e0c0-4c34-bede-a205cea2b91d")
 	)
 	(junction
-		(at 113.03 50.8)
+		(at 165.1 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "59e51b1a-db11-47d5-9521-cbdcee3fd652")
+		(uuid "4a5cb9cd-7749-418e-b821-36cb58ee80a0")
 	)
 	(junction
-		(at 231.14 100.33)
+		(at 185.42 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "5e6b4aa5-1e81-4391-b253-fb23750c9e86")
+		(uuid "5f8bacb4-d15a-43cd-ad10-160df0162f43")
 	)
 	(junction
-		(at 105.41 118.11)
+		(at 157.48 82.55)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "62d2c656-cd80-413c-a2c1-8f60e3468487")
+		(uuid "74d04b30-3e04-4eee-a6f6-521ff0cb475e")
 	)
 	(junction
-		(at 182.88 82.55)
+		(at 109.22 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6d4be60d-20d5-4297-abb0-fed4441f831b")
+		(uuid "93908747-6920-4e8f-8f5c-5cfdfa8a50fc")
 	)
 	(junction
-		(at 190.5 138.43)
+		(at 227.33 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7178d261-e47c-460a-8950-b815bb6f93b4")
+		(uuid "9c6b40d8-4d3c-4c42-88b0-b32530dece81")
+	)
+	(junction
+		(at 104.14 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9d8cd91e-4f54-4984-9f90-34eb4357417e")
+	)
+	(junction
+		(at 157.48 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a74ec17d-b25f-4746-8e68-ebb17b0e5a02")
+	)
+	(junction
+		(at 179.07 82.55)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "afb191e2-db95-42b1-bfa7-fcaf144fc221")
+	)
+	(junction
+		(at 171.45 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d0894283-6fe2-4287-aa51-64123a01a662")
+	)
+	(junction
+		(at 186.69 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d1db33bf-2542-4575-bf57-c9412ea16857")
 	)
 	(junction
 		(at 128.27 50.8)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7f7dbd1b-0404-4bd5-b819-61836507d1d5")
+		(uuid "e7b1e7bc-d8bd-4abb-b9fb-8ab7edf0cd29")
 	)
 	(junction
-		(at 132.08 50.8)
+		(at 165.1 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8af58946-adaf-4832-9ee1-ef5d51bbe1a8")
+		(uuid "fd56b961-2790-4a53-a35f-777a173a32a9")
 	)
 	(junction
-		(at 231.14 114.3)
+		(at 227.33 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "bc48a4f7-86bc-4c85-9557-392a1386da74")
+		(uuid "fe5f7efc-098a-4ef5-804e-2f521353bc58")
 	)
-	(junction
-		(at 127 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bd71adc2-27c0-45bd-8c49-1d2d9a04d690")
-	)
-	(junction
-		(at 113.03 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "cf3cb9ae-117c-4c04-b46b-4be66305a339")
-	)
-	(junction
-		(at 168.91 82.55)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d3b3c7c7-6a2f-4f11-a499-ff16b2e67792")
-	)
-	(junction
-		(at 231.14 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d3d8ca5f-1974-4a82-b87a-9c46a296b763")
-	)
-	(junction
-		(at 107.95 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e016814a-b7d4-4611-bb77-8b3c2ad9b9b2")
-	)
-	(junction
-		(at 105.41 125.73)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ecf365f1-6020-413c-8a75-bebd9ca926c4")
-	)
-	(junction
-		(at 161.29 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "faf6b1b7-5bef-449a-848a-dcd0847c9b22")
-	)
-	(wire
-		(pts
-			(xy 190.5 132.08) (xy 190.5 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "00d31141-6ea8-4e0e-9488-b65191ee3f33")
-	)
 	(wire
 		(pts
-			(xy 242.57 153.67) (xy 127 153.67)
+			(xy 171.45 114.3) (xy 175.26 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "01fac610-bd3c-412b-83bc-6994c1e13d66")
+		(uuid "05986c73-0fcb-41d4-8f06-11e849a4d0cd")
 	)
 	(wire
 		(pts
-			(xy 154.94 60.96) (xy 161.29 60.96)
+			(xy 186.69 138.43) (xy 227.33 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "04f2b7a1-ddeb-4745-b434-8c4de245f96a")
+		(uuid "0c4ab5fc-8fce-4dc3-91a3-1f3a3abfcba8")
 	)
 	(wire
 		(pts
-			(xy 168.91 54.61) (xy 182.88 54.61)
+			(xy 165.1 127) (xy 189.23 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "08e8b6fe-757b-4ad1-ace7-2136151b4993")
+		(uuid "0e1db85a-7a88-4c92-9f5d-71791fb82d9a")
 	)
 	(wire
 		(pts
-			(xy 168.91 111.76) (xy 179.07 111.76)
+			(xy 134.62 71.12) (xy 124.46 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0a58b6ed-28e6-44ff-beca-226ee3d0f811")
+		(uuid "17a38119-a4f8-40e5-b4b5-3848fcf3982e")
 	)
 	(wire
 		(pts
-			(xy 161.29 66.04) (xy 161.29 82.55)
+			(xy 165.1 132.08) (xy 186.69 132.08)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0faf4a37-0470-49e2-a757-5dd67b3333c9")
+		(uuid "1c1d05e0-23bf-416f-98b6-f59df6ffd365")
 	)
 	(wire
 		(pts
-			(xy 106.68 101.6) (xy 119.38 101.6)
+			(xy 185.42 104.14) (xy 185.42 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "106d3511-991c-4f22-97a3-5648f1a8794a")
+		(uuid "2008e0b8-dc6c-40ea-8385-9b93260c3de6")
 	)
 	(wire
 		(pts
-			(xy 99.06 118.11) (xy 105.41 118.11)
+			(xy 182.88 114.3) (xy 185.42 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "19b7f8df-13e3-4425-b904-6e77eb069027")
+		(uuid "2739b380-ad67-4c93-b1d1-56347eb2f531")
 	)
 	(wire
 		(pts
-			(xy 113.03 137.16) (xy 133.35 137.16)
+			(xy 227.33 92.71) (xy 227.33 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "19cf68da-052d-4b6e-b6a3-3dc1188542b4")
+		(uuid "298eca01-1004-4d05-b184-93554d36cfa0")
 	)
 	(wire
 		(pts
-			(xy 107.95 50.8) (xy 100.33 50.8)
+			(xy 109.22 82.55) (xy 157.48 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1a0ab5e6-2a78-49a1-852b-2d111615b4ab")
+		(uuid "3635c84b-633b-4c21-92fe-bcc231b2bec1")
 	)
 	(wire
 		(pts
-			(xy 179.07 100.33) (xy 200.66 100.33)
+			(xy 227.33 101.6) (xy 227.33 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1c212615-41a5-47da-b012-7723ff1dc91f")
+		(uuid "369cfe63-a836-4c8c-98e4-404de13bb28c")
 	)
 	(wire
 		(pts
-			(xy 182.88 82.55) (xy 231.14 82.55)
+			(xy 201.93 101.6) (xy 167.64 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "22e2242f-68cf-456c-9c1c-8ab54c45235f")
+		(uuid "3716dda5-48a9-40b8-880d-2822d9b75867")
 	)
 	(wire
 		(pts
-			(xy 168.91 114.3) (xy 207.01 114.3)
+			(xy 227.33 82.55) (xy 227.33 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2377a756-0d6e-4b2a-894a-1dc0e837ad92")
+		(uuid "372d3975-d2bb-40e0-8f62-b2bb3ec597e1")
 	)
 	(wire
 		(pts
-			(xy 242.57 54.61) (xy 242.57 153.67)
+			(xy 157.48 50.8) (xy 167.64 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "239b8d47-0c34-43f2-86f3-2c78f9a0f7d6")
+		(uuid "3754fbe8-1746-4433-956d-3a5752c1e22e")
 	)
 	(wire
 		(pts
-			(xy 182.88 54.61) (xy 242.57 54.61)
+			(xy 204.47 92.71) (xy 209.55 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2cebb3d8-faaf-4147-80dd-729d2d21009b")
+		(uuid "3825a3dc-35e4-420a-a96b-1140ba66065f")
 	)
 	(wire
 		(pts
-			(xy 190.5 138.43) (xy 231.14 138.43)
+			(xy 104.14 50.8) (xy 109.22 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2e5c3d74-ebe9-45f4-81d2-adf3fe0f678f")
+		(uuid "3b9ab74a-368d-483a-93b7-28b65661ac3e")
 	)
 	(wire
 		(pts
-			(xy 127 125.73) (xy 127 106.68)
+			(xy 227.33 144.78) (xy 227.33 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3362a7cd-f607-4abc-80c1-cf71df41cf93")
+		(uuid "3bdd868a-38ee-4a23-8228-679ef584a2f1")
 	)
 	(wire
 		(pts
-			(xy 113.03 50.8) (xy 113.03 60.96)
+			(xy 128.27 50.8) (xy 138.43 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3bb4aa63-4b7b-4dd8-81f5-1e31b0163113")
+		(uuid "3cc775b3-4986-4640-832b-0286996d944a")
 	)
 	(wire
 		(pts
-			(xy 182.88 54.61) (xy 182.88 50.8)
+			(xy 171.45 119.38) (xy 189.23 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3c493352-e776-4c5b-928e-1609e40c655d")
+		(uuid "40feb7c5-be3f-4095-85e4-b9451edc1a44")
 	)
 	(wire
 		(pts
-			(xy 231.14 82.55) (xy 231.14 100.33)
+			(xy 157.48 82.55) (xy 165.1 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3df50f76-fe12-4786-a981-b68e3f645446")
+		(uuid "421d6000-c68d-4c05-917d-c1d06bc50bbf")
 	)
 	(wire
 		(pts
-			(xy 113.03 68.58) (xy 113.03 82.55)
+			(xy 179.07 54.61) (xy 238.76 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "448a8941-13df-46c4-bc5c-9982df255d19")
+		(uuid "42255d33-d6fc-4257-bb0f-6f32434fc075")
 	)
 	(wire
 		(pts
-			(xy 127 139.7) (xy 133.35 139.7)
+			(xy 120.65 146.05) (xy 186.69 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "45e4e414-ed88-4aea-b8e2-ebb5f5678e84")
+		(uuid "4ce90d7e-3200-4943-970e-3d3f8fdc6a2b")
 	)
 	(wire
 		(pts
-			(xy 91.44 125.73) (xy 105.41 125.73)
+			(xy 151.13 71.12) (xy 165.1 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4f8d9072-45e5-474a-b11e-7a2823a05868")
+		(uuid "4f0a82bd-5589-4708-9145-8785c5b046d6")
 	)
 	(wire
 		(pts
-			(xy 127 153.67) (xy 127 139.7)
+			(xy 171.45 96.52) (xy 171.45 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4febf932-8f3c-4c24-9448-81556a43f89e")
+		(uuid "51c50de4-0263-4dac-9544-5195961f3f0e")
 	)
 	(wire
 		(pts
-			(xy 154.94 71.12) (xy 168.91 71.12)
+			(xy 165.1 71.12) (xy 165.1 73.66)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "567d23b7-bd6d-49b8-b3b7-c55af9531cd2")
+		(uuid "52e67851-6f6c-4e0d-ac29-c327886cb8b7")
 	)
 	(wire
 		(pts
-			(xy 119.38 101.6) (xy 119.38 124.46)
+			(xy 168.91 92.71) (xy 168.91 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "59fab080-ae78-4655-bb47-709e31742554")
+		(uuid "53ff41f8-26ad-470c-b80a-fadc8cd3f002")
 	)
 	(wire
 		(pts
-			(xy 168.91 66.04) (xy 168.91 71.12)
+			(xy 165.1 121.92) (xy 189.23 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5e3b030a-ff0e-4e00-95a5-2cf80ef52fc6")
+		(uuid "54d6e087-7301-4b8d-a186-ace39a9a7c39")
 	)
 	(wire
 		(pts
-			(xy 161.29 50.8) (xy 171.45 50.8)
+			(xy 151.13 66.04) (xy 157.48 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6137b635-91b8-4bec-bcb6-9bec94afce39")
+		(uuid "57e33fe7-0088-4fd1-aa49-b6208be9acd6")
 	)
 	(wire
 		(pts
-			(xy 113.03 50.8) (xy 128.27 50.8)
+			(xy 165.1 114.3) (xy 167.64 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "61f3ac41-607a-4733-a73e-e6bbe2fe4d66")
+		(uuid "58068e1c-f83f-4be3-afc9-6741717360d9")
 	)
 	(wire
 		(pts
-			(xy 179.07 100.33) (xy 179.07 111.76)
+			(xy 123.19 96.52) (xy 123.19 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "624a0f6b-45f3-4805-ab52-a09d983f5308")
+		(uuid "59af6dcd-0ce5-47c9-ae6b-6bb0ef705a92")
 	)
 	(wire
 		(pts
-			(xy 91.44 121.92) (xy 99.06 121.92)
+			(xy 179.07 72.39) (xy 179.07 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6477ddad-9aad-4223-9d63-53d58054fbf3")
+		(uuid "60cde17d-4e27-4c83-aa76-d85096731e10")
 	)
 	(wire
 		(pts
-			(xy 113.03 137.16) (xy 113.03 146.05)
+			(xy 129.54 137.16) (xy 120.65 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "69152237-566b-4d8e-bc33-96d06113e38c")
+		(uuid "64c5610d-546f-4f4f-b1dc-5bb9a8de59c2")
 	)
 	(wire
 		(pts
-			(xy 231.14 144.78) (xy 231.14 138.43)
+			(xy 179.07 50.8) (xy 175.26 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6a39534a-c030-4ace-80f7-3778e6fb58c0")
+		(uuid "6c25ac29-0e1a-4dbd-92b0-e7caf8746cb4")
 	)
 	(wire
 		(pts
-			(xy 149.86 50.8) (xy 161.29 50.8)
+			(xy 123.19 139.7) (xy 129.54 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6d42ea9c-2324-4c8a-9654-a7ccde3e7638")
+		(uuid "6ce5b0fc-a964-45fa-8ad0-0bf5be1beae3")
 	)
 	(wire
 		(pts
-			(xy 132.08 60.96) (xy 132.08 50.8)
+			(xy 120.65 137.16) (xy 120.65 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "71f49db6-3599-4f3d-84b8-553111e5c44f")
+		(uuid "6dd5d74e-5634-4e6b-b82a-d0f50d3430f4")
 	)
 	(wire
 		(pts
-			(xy 182.88 50.8) (xy 179.07 50.8)
+			(xy 165.1 111.76) (xy 168.91 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7604fc15-0f62-4529-bd95-b2589a7f95cd")
+		(uuid "70b05c0b-257f-4f4e-8f1a-f8ebf47c24ad")
 	)
 	(wire
 		(pts
-			(xy 116.84 121.92) (xy 133.35 121.92)
+			(xy 238.76 153.67) (xy 123.19 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "78db58ca-dbca-4d99-b07a-6660cbce18e5")
+		(uuid "728bee2d-a138-4666-8f40-81d762f68249")
 	)
 	(wire
 		(pts
-			(xy 113.03 82.55) (xy 161.29 82.55)
+			(xy 186.69 146.05) (xy 186.69 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "80db6c9c-7ecc-4d13-b3d4-f52d026b3e63")
+		(uuid "72e2b437-86b2-4337-b0ab-7e3706087832")
 	)
 	(wire
 		(pts
-			(xy 182.88 54.61) (xy 182.88 64.77)
+			(xy 238.76 54.61) (xy 238.76 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "87d3f01c-7548-4f91-a989-842432be3a78")
+		(uuid "759b710a-c74f-4458-9948-c4b39da249d1")
 	)
 	(wire
 		(pts
-			(xy 161.29 82.55) (xy 168.91 82.55)
+			(xy 134.62 60.96) (xy 128.27 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8f50b83d-f9d9-4a59-8a16-2e0b61c45be4")
+		(uuid "75daa728-b3e4-4b73-980b-328486c538c8")
 	)
 	(wire
 		(pts
-			(xy 208.28 100.33) (xy 213.36 100.33)
+			(xy 146.05 50.8) (xy 157.48 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8fab62c6-74ae-48bd-ad22-e521c814c6bf")
+		(uuid "77a57e4a-6dfc-40d1-8da0-440a83927212")
 	)
 	(wire
 		(pts
-			(xy 113.03 146.05) (xy 190.5 146.05)
+			(xy 165.1 124.46) (xy 189.23 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "903b53c4-4eb1-44b4-9abf-d8de3599b122")
+		(uuid "7f04e18f-1445-4c32-b12b-89f7922af79b")
 	)
 	(wire
 		(pts
-			(xy 161.29 60.96) (xy 161.29 50.8)
+			(xy 196.85 92.71) (xy 168.91 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "90ab5319-b3af-4e5b-b8b2-99599b4becfb")
+		(uuid "8f0dc531-79ec-47f7-8005-95e8a21d8c19")
 	)
 	(wire
 		(pts
-			(xy 99.06 121.92) (xy 99.06 118.11)
+			(xy 128.27 60.96) (xy 128.27 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "96fd3eb2-f7c4-4e58-b745-67c7a776320b")
+		(uuid "92aa5dee-21a8-4c67-8ae8-ae06f14fa32d")
 	)
 	(wire
 		(pts
-			(xy 133.35 106.68) (xy 127 106.68)
+			(xy 109.22 50.8) (xy 124.46 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e88bf9a-01ad-4beb-b354-50592ab021fe")
+		(uuid "94719a88-a251-4ae8-bc3c-4b16ffbe0929")
 	)
 	(wire
 		(pts
-			(xy 231.14 100.33) (xy 220.98 100.33)
+			(xy 109.22 68.58) (xy 109.22 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a087e034-6655-421f-b67a-3b66d7300cb0")
+		(uuid "9d6a38c1-9e3a-4892-97b2-732fd32c1374")
 	)
 	(wire
 		(pts
-			(xy 138.43 60.96) (xy 132.08 60.96)
+			(xy 165.1 82.55) (xy 179.07 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a19ffbfb-00c1-4f25-abb6-318482482f62")
+		(uuid "a04d79a7-f45d-452c-95a4-14c8c55a4d01")
 	)
 	(wire
 		(pts
-			(xy 132.08 50.8) (xy 142.24 50.8)
+			(xy 165.1 129.54) (xy 189.23 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a7a4ed23-85c4-49e3-9c31-dd21cfcadaaa")
+		(uuid "a3baae82-4385-4519-9480-d29d6f59b0cd")
 	)
 	(wire
 		(pts
-			(xy 190.5 146.05) (xy 190.5 138.43)
+			(xy 151.13 60.96) (xy 157.48 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ac04f53e-57fc-48e2-ad7c-fb1099613d3e")
+		(uuid "afb4f37e-4051-4c9b-96e6-be7588c5de32")
 	)
 	(wire
 		(pts
-			(xy 168.91 82.55) (xy 182.88 82.55)
+			(xy 165.1 82.55) (xy 165.1 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b0615668-2194-4357-9c7e-98477db8b62b")
+		(uuid "afc7efda-5019-4a00-9315-726d9f621d05")
 	)
 	(wire
 		(pts
-			(xy 91.44 129.54) (xy 133.35 129.54)
+			(xy 179.07 54.61) (xy 179.07 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b4e148d1-8de4-48f2-ab5c-bcaca7dd8990")
+		(uuid "b08f8530-341b-4fb5-a0bd-23ec88c30a5a")
 	)
 	(wire
 		(pts
-			(xy 105.41 118.11) (xy 113.03 118.11)
+			(xy 186.69 132.08) (xy 186.69 138.43)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b6138a5f-405a-4958-9dd3-a4b28e3e896e")
+		(uuid "b4d10b6e-bd8e-46c1-b15e-a0f4223cce51")
 	)
 	(wire
 		(pts
-			(xy 116.84 104.14) (xy 116.84 121.92)
+			(xy 123.19 153.67) (xy 123.19 139.7)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bb9a5f5c-af5b-4c1d-b573-51a8f80a76aa")
+		(uuid "b5cbb102-b9a9-4646-a417-61ddf840f9ba")
 	)
 	(wire
 		(pts
-			(xy 231.14 100.33) (xy 231.14 114.3)
+			(xy 171.45 119.38) (xy 171.45 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bed8dde2-8d37-4830-b3c4-d865ab427313")
+		(uuid "b9d7644b-f902-494a-9b0f-3b999008691e")
 	)
 	(wire
 		(pts
-			(xy 119.38 124.46) (xy 133.35 124.46)
+			(xy 227.33 104.14) (xy 185.42 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c2d46dee-5450-446a-a9c7-e33ef59f53f6")
+		(uuid "be1318c9-3ada-438e-8abf-cf5587c689e7")
 	)
 	(wire
 		(pts
-			(xy 113.03 137.16) (xy 113.03 118.11)
+			(xy 129.54 106.68) (xy 123.19 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c3971182-d4b0-4d4e-b1ff-df6aa9f26392")
+		(uuid "c22b7c9a-cb4a-4045-b971-81875307f422")
 	)
 	(wire
 		(pts
-			(xy 217.17 114.3) (xy 231.14 114.3)
+			(xy 104.14 45.72) (xy 104.14 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c4bb790b-b5cb-4106-b8bd-eae7d9fcf16c")
+		(uuid "c34502ef-3ed7-41cc-b6f1-b70ea46abd86")
 	)
 	(wire
 		(pts
-			(xy 107.95 45.72) (xy 107.95 50.8)
+			(xy 212.09 101.6) (xy 227.33 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c7e0169f-9fe7-4a96-bc0d-4342e81a0f6b")
+		(uuid "c3cfb9d9-f048-46cb-b924-f857ff3c0c36")
 	)
 	(wire
 		(pts
-			(xy 106.68 104.14) (xy 116.84 104.14)
+			(xy 179.07 82.55) (xy 227.33 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cadc4a5a-ab3c-42de-ac21-d28b004bfd0c")
+		(uuid "c48e4412-6a5a-499b-8c29-2952a0ddd993")
 	)
 	(wire
 		(pts
-			(xy 106.68 96.52) (xy 127 96.52)
+			(xy 104.14 50.8) (xy 96.52 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cfdb42c3-72ec-4a77-9ea6-b212120b0ca5")
+		(uuid "c9e0c571-bc9d-4f3c-81ee-24c1e9ce755f")
 	)
 	(wire
 		(pts
-			(xy 128.27 71.12) (xy 128.27 50.8)
+			(xy 179.07 54.61) (xy 179.07 64.77)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d3c4f0f5-74a5-4849-a58e-7e457341a8a2")
+		(uuid "cd86a4d9-60bd-4368-8720-f35fcb25bcf3")
 	)
 	(wire
 		(pts
-			(xy 154.94 66.04) (xy 161.29 66.04)
+			(xy 124.46 71.12) (xy 124.46 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d6a13a2b-8623-4c4f-89dc-a27593e92c38")
+		(uuid "ce224ec8-6485-47f3-91c6-ca019e6b072b")
 	)
 	(wire
 		(pts
-			(xy 106.68 99.06) (xy 113.03 99.06)
+			(xy 167.64 101.6) (xy 167.64 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dbb189c8-3121-4f4e-89dd-137f52e874b5")
+		(uuid "d12d78e2-180b-4021-9130-6cc80f070029")
 	)
 	(wire
 		(pts
-			(xy 105.41 125.73) (xy 127 125.73)
+			(xy 123.19 96.52) (xy 171.45 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "de0e6330-ad4f-4a87-a231-2e2f79a86ccd")
+		(uuid "d5ef7b23-fea2-49bd-ae83-e5244794a86e")
 	)
 	(wire
 		(pts
-			(xy 127 96.52) (xy 127 106.68)
+			(xy 109.22 50.8) (xy 109.22 60.96)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "dfb1e701-b285-46c3-bf98-85a14cd0b151")
+		(uuid "da2b9410-fb73-437b-84eb-7a42bee6358b")
 	)
 	(wire
 		(pts
-			(xy 138.43 71.12) (xy 128.27 71.12)
+			(xy 157.48 60.96) (xy 157.48 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e1f26745-6e93-4b5f-a050-605031a3e779")
+		(uuid "da56b547-6479-47d5-9076-c2a79b01ff72")
 	)
 	(wire
 		(pts
-			(xy 107.95 50.8) (xy 113.03 50.8)
+			(xy 185.42 116.84) (xy 185.42 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e361ae6f-d52f-4095-b249-0969a15dd6c9")
+		(uuid "dce2952f-edaa-4a36-ad04-e05caec2828c")
 	)
 	(wire
 		(pts
-			(xy 128.27 50.8) (xy 132.08 50.8)
+			(xy 124.46 50.8) (xy 128.27 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e92b498a-be8b-4c84-9add-a417010c26cb")
+		(uuid "dec0214c-dce0-43ac-9aea-8dc9ebcd8320")
 	)
 	(wire
 		(pts
-			(xy 168.91 82.55) (xy 168.91 81.28)
+			(xy 227.33 92.71) (xy 217.17 92.71)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f3c2d7e1-fece-4c13-9c14-145f0ae1bb12")
+		(uuid "e075106d-ee32-4c73-ad5a-4301e3d844b5")
 	)
 	(wire
 		(pts
-			(xy 231.14 114.3) (xy 231.14 138.43)
+			(xy 189.23 116.84) (xy 185.42 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f72b85de-9651-41b4-abb2-5a8330b3d877")
+		(uuid "ebb57c0b-9d99-4c2a-bcad-fd68d44ec22a")
 	)
 	(wire
 		(pts
-			(xy 182.88 72.39) (xy 182.88 82.55)
+			(xy 165.1 66.04) (xy 165.1 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "f8219fbd-7379-482a-a5a7-ad3dee39146a")
+		(uuid "f66ebd6e-c888-4413-a101-3c4d362ddf86")
 	)
 	(wire
 		(pts
-			(xy 168.91 132.08) (xy 190.5 132.08)
+			(xy 165.1 54.61) (xy 165.1 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "faf195c7-95d9-4d0b-8e88-f49cb15a99fa")
+		(uuid "f687f2dc-18fe-4467-a88d-04893504df29")
 	)
 	(wire
 		(pts
-			(xy 113.03 99.06) (xy 113.03 82.55)
+			(xy 227.33 138.43) (xy 227.33 104.14)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fccf6f0c-1425-413a-9024-6a88a0c42d3d")
+		(uuid "f79db74b-1c74-4c61-986d-bbdbdea9a714")
 	)
 	(wire
 		(pts
-			(xy 168.91 71.12) (xy 168.91 73.66)
+			(xy 165.1 54.61) (xy 179.07 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fe72ea13-0dd2-4197-8ba0-be42b13325a7")
+		(uuid "fb62c105-4e75-4c31-a766-226f4f97d979")
 	)
 	(wire
 		(pts
-			(xy 168.91 54.61) (xy 168.91 58.42)
+			(xy 157.48 66.04) (xy 157.48 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
-		)
-		(uuid "ff22d320-a81e-478e-bbb2-cb1d74ed8a59")
-	)
-	(symbol
-		(lib_id "CCEW Wearable Alert Library:Fermion{colon}_MEMS_Microphone")
-		(at 88.9 130.81 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3c080572-8502-4f7e-ac8f-5af600e6b3d8")
-		(property "Reference" "MEMS_Microphone_Analog1"
-			(at 97.282 117.602 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" ""
-			(at 88.9 130.81 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 88.9 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 88.9 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 88.9 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin ""
-			(uuid "28ef484f-f3e5-4e07-945b-d9e8ebb9b0ef")
-		)
-		(pin ""
-			(uuid "ecfda326-f2b6-45ba-ba0b-7034b4bdb7c1")
-		)
-		(pin ""
-			(uuid "43b16238-196e-428a-add8-04b20ecd31a5")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "MEMS_Microphone_Analog1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CCEW Wearable Alert:320E11RED")
-		(at 199.39 116.84 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4a1d9572-4d95-4135-859e-b2561a75e181")
-		(property "Reference" "Push_Switch1"
-			(at 212.09 109.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 199.39 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 199.39 116.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://configured-product-images.s3.amazonaws.com/Datasheets/320.pdf"
-			(at 209.042 133.35 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Push button switch"
-			(at 210.566 137.16 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "6bac68f0-d49a-4fe3-af32-2fe73e10bac5")
-		)
-		(pin "1"
-			(uuid "e86e9075-2e2f-4ad5-8f3c-f85968bd0528")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "Push_Switch1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 231.14 144.78 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4ba2bb33-6e2c-4340-ac05-be550b5f079b")
-		(property "Reference" "#PWR2"
-			(at 231.14 151.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 231.14 149.86 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 231.14 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 231.14 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 231.14 144.78 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bcc13662-4e32-4126-9d48-2c6a25d588b6")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "#PWR2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 217.17 100.33 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6df7d541-5040-4d8f-90da-3d9858fc7c3d")
-		(property "Reference" "D2"
-			(at 216.916 93.472 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "LED"
-			(at 217.17 96.266 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 217.17 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 217.17 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 217.17 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "45194d54-c99a-495f-b905-7e7fd648d31d")
-		)
-		(pin "2"
-			(uuid "71ce795e-69d6-4889-aa90-ecdbac3be5cf")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "D2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 146.05 50.8 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "728626b3-1d38-47c0-947b-5e4a69c3e410")
-		(property "Reference" "L1"
-			(at 146.05 45.72 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "4.7uH"
-			(at 146.05 48.26 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 146.05 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 146.05 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 146.05 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4414e30e-083f-4e6c-8249-18838e0f1952")
-		)
-		(pin "2"
-			(uuid "ee0c9e85-a8ef-4b24-a301-4035b1c04a3c")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "L1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CCEW Wearable Alert Library:LIPO_Charger")
-		(at 97.79 62.23 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "89965072-1b5d-4663-8863-8dc7f2bd5547")
-		(property "Reference" "LIPO_Charger1"
-			(at 94.615 46.99 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 97.79 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 97.79 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.79 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 97.79 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "43d2459c-bd5c-4fb9-9650-58be489331ba")
-		)
-		(pin "5"
-			(uuid "6eeb6d20-8880-459c-9a14-1aaaff784a66")
-		)
-		(pin "3"
-			(uuid "bf62691b-eb10-4622-b143-ea18a5e7a828")
-		)
-		(pin "1"
-			(uuid "1b0d15ad-d7eb-4b73-9242-45cb47dd0b66")
-		)
-		(pin "2"
-			(uuid "c1634d2a-b4a0-45b3-a594-05b712330ccb")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "LIPO_Charger1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_name "MIC2288_1")
-		(lib_id "CCEW Wearable Alert:MIC2288")
-		(at 104.14 105.41 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "9752d214-ca33-4137-9790-7a4456a519d7")
-		(property "Reference" "Gravity_Reciever_Module1"
-			(at 110.744 92.964 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" ""
-			(at 104.14 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 104.14 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/3/282/1/MIC2288-1A-1.2MHz-PWM-Boost-Converter-DS20006034.pdf"
-			(at 130.556 97.282 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "1A, 1.2 MHz PWM Boost Converter"
-			(at 127 94.742 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "92febbfd-e37d-40d1-9b7a-2fab2e7f1105")
-		)
-		(pin "3"
-			(uuid "661dcc9b-e356-4be0-9a3f-c6ebfb91e9ab")
-		)
-		(pin "4"
-			(uuid "452e64df-8113-4938-8c19-4d605ca3df2a")
-		)
-		(pin "1"
-			(uuid "5ecfca1b-432e-443e-b08f-ab2062252676")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "Gravity_Reciever_Module1")
-					(unit 1)
-				)
-			)
 		)
+		(uuid "ff1a6df7-8844-4297-91a7-59c85d1090a2")
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 105.41 121.92 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a7864d4d-46b0-472f-9714-2bb6dbdd6ab6")
-		(property "Reference" "C1"
-			(at 108.712 121.92 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.1uF"
-			(at 101.854 121.92 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 104.4448 118.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 105.41 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 105.41 121.92 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "663041b6-e5cc-4124-8689-fa470a23a752")
-		)
-		(pin "1"
-			(uuid "5196ff7d-fb8b-42de-b397-c7c2f7f25013")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CCEW Wearable Alert:Arduino_Nano_ESP32")
-		(at 161.29 158.75 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "be582b3b-2be1-422b-b2e8-b6ae9f8d2c54")
-		(property "Reference" "Arduino_Nano_ESP1"
-			(at 151.13 99.822 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 151.13 100.33 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 135.89 101.6 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 135.89 101.6 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 135.89 101.6 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "16"
-			(uuid "fc602a68-0748-4951-8287-2accde6a8327")
-		)
-		(pin "2"
-			(uuid "c0a4f134-02a2-4a3a-96a9-9ee282745de9")
-		)
-		(pin "5"
-			(uuid "816a93d4-f6bb-4dbf-83a0-2edf33415c18")
-		)
-		(pin "26"
-			(uuid "7cbd2ac6-9d65-466e-8541-d8deafc3ac5d")
-		)
-		(pin "3"
-			(uuid "c78752bd-f1ed-4b89-b134-687808b96df6")
-		)
-		(pin "19"
-			(uuid "1a072b6e-d90b-4ff4-9027-9f9a2a91e59b")
-		)
-		(pin "6"
-			(uuid "d1566e4f-5cd8-4d95-a194-b5f581c1f474")
-		)
-		(pin "17"
-			(uuid "742b449c-628a-4e2a-aeec-d3a27138289a")
-		)
-		(pin "7"
-			(uuid "81c3f392-2fed-4120-a0de-8e6aa0d0c0e5")
-		)
-		(pin "29"
-			(uuid "ffd67744-9df1-4cc2-a106-51d9483eb053")
-		)
-		(pin "9"
-			(uuid "8cc793ce-e1e8-4c0b-b75f-148c86007cb5")
-		)
-		(pin "11"
-			(uuid "ff02908c-ee2b-49a6-8c14-7d8cf8c3bb82")
-		)
-		(pin "22"
-			(uuid "0dc9a9fc-9004-4c59-99a1-1d2c7865e20d")
-		)
-		(pin "4"
-			(uuid "b30115a6-1ec7-4e03-9825-73a2047ae0d7")
-		)
-		(pin "15"
-			(uuid "723d3fc9-5878-4f29-a336-143d4f1e5d38")
-		)
-		(pin "27"
-			(uuid "95d2c815-e437-4d63-90bd-6b8584bcb8f3")
-		)
-		(pin "23"
-			(uuid "bb6576cf-d94d-4792-85d2-e7a78b17d94e")
-		)
-		(pin "30"
-			(uuid "d076ccde-5908-4c57-8dcc-9fb2793e27dc")
-		)
-		(pin "18"
-			(uuid "9722d37b-04cf-4051-a775-d9be537d0976")
-		)
-		(pin "21"
-			(uuid "db925593-593a-4974-9b7d-b9112186d905")
-		)
-		(pin "24"
-			(uuid "15586a65-ff6e-4045-a151-e4fd21c9602b")
-		)
-		(pin "1"
-			(uuid "d3da52a4-7fe4-4d8e-b3a6-f5c62d30ca0b")
-		)
-		(pin "20"
-			(uuid "c9315462-309c-4c6a-aa36-bf5435685a09")
-		)
-		(pin "28"
-			(uuid "b7d685fc-9a72-413b-baed-eaed8c04ef46")
-		)
-		(pin "25"
-			(uuid "0b378713-ef62-43b1-8d1a-377b9ff55472")
-		)
-		(pin "10"
-			(uuid "2723ad21-8de7-4d4e-ae1d-a138a61368bb")
-		)
-		(pin "14"
-			(uuid "5eb1cdb1-8ed7-4e6d-8dfa-b9c9f544829a")
-		)
-		(pin "12"
-			(uuid "e9e59afd-f319-4567-b7fa-16b26cabe79b")
-		)
-		(pin "13"
-			(uuid "47cf56cf-8965-4e42-a327-7c91d17e1ea7")
-		)
-		(pin "8"
-			(uuid "9d4532af-519a-48d8-9924-a4e2297c40e2")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "Arduino_Nano_ESP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "CCEW Wearable Alert:MIC2288")
-		(at 140.97 73.66 270)
-		(mirror x)
+		(at 179.07 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4242,419 +3466,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c493d47f-5f06-4939-9d02-eeb8a7c6e893")
-		(property "Reference" "BoostConverter1"
-			(at 146.685 55.88 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 140.97 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 140.97 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/3/282/1/MIC2288-1A-1.2MHz-PWM-Boost-Converter-DS20006034.pdf"
-			(at 114.554 65.532 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "1A, 1.2 MHz PWM Boost Converter"
-			(at 118.11 62.992 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "3a735432-2d44-453e-adcd-d79b281b2093")
-		)
-		(pin "3"
-			(uuid "dc910807-0add-4df6-b077-42b5bb9be9ec")
-		)
-		(pin "4"
-			(uuid "74523e33-1cdd-406d-bab1-0645a883f84b")
-		)
-		(pin "5"
-			(uuid "a45bafbb-3702-4561-86e6-734a578d484c")
-		)
-		(pin "1"
-			(uuid "0c1b7cdc-b9ea-4079-86c6-7a70e09093e9")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "BoostConverter1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 107.95 45.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ca9e7b4a-2277-4818-9fe8-d744c6aa02a2")
-		(property "Reference" "#PWR1"
-			(at 107.95 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3.7V"
-			(at 107.95 40.64 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 107.95 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 107.95 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 107.95 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fb701e50-9422-4d32-b96c-8913e6575096")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "#PWR1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ScottoKeebs:Placeholder_Resistor")
-		(at 168.91 62.23 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ccae27d3-ed7b-471d-ae33-139973c98bad")
-		(property "Reference" "5.62k1"
-			(at 171.45 60.9599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Resistor"
-			(at 171.45 63.4999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 167.132 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 168.91 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 168.91 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "c123c281-d4a6-4b76-a235-ea86fd8fbea9")
-		)
-		(pin "1"
-			(uuid "f71d935c-2523-4db0-8f79-7fe614805cb7")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "5.62k1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ScottoKeebs:Placeholder_Resistor")
-		(at 204.47 100.33 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ce8cbce2-e66d-40a1-ae13-7077059c32eb")
-		(property "Reference" "R2"
-			(at 204.47 93.98 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1kΩ"
-			(at 204.47 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 204.47 98.552 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 100.33 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 204.47 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "494183bf-96f0-4401-83f3-b8ca34aee312")
-		)
-		(pin "1"
-			(uuid "b4adcba4-18c6-49b7-82f0-4b1afe955e5c")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D_Schottky")
-		(at 175.26 50.8 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d2d05fae-ebe1-482e-852e-80a8fafa2ac5")
-		(property "Reference" "D1"
-			(at 175.5775 44.45 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "D_Schottky"
-			(at 175.5775 46.99 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 175.26 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Schottky diode"
-			(at 175.26 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "56d0f644-cd08-48ce-9a08-dc9429d8f989")
-		)
-		(pin "1"
-			(uuid "50ac2e4e-5fa9-453d-9d11-59d546a93050")
-		)
-		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 182.88 68.58 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d99d04dc-df23-44c6-a011-a081e3600025")
+		(uuid "06a0a516-5c0a-4f71-8c0d-87aa89ff9bd9")
 		(property "Reference" "C3"
-			(at 186.69 67.3099 0)
+			(at 182.88 67.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4665,7 +3479,7 @@
 			)
 		)
 		(property "Value" "22nF"
-			(at 186.69 69.8499 0)
+			(at 182.88 69.8499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4676,7 +3490,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 183.8452 72.39 0)
+			(at 180.0352 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4687,7 +3501,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 182.88 68.58 0)
+			(at 179.07 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4698,7 +3512,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 182.88 68.58 0)
+			(at 179.07 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4709,14 +3523,14 @@
 			)
 		)
 		(pin "2"
-			(uuid "9f2c1e8e-4edb-4e96-998e-b929eac08271")
+			(uuid "a1ee562c-899c-4355-ba21-cc1c767292b1")
 		)
 		(pin "1"
-			(uuid "8b631cf0-03bb-4bff-a7e0-cc254bf63e52")
+			(uuid "58f8f07a-0fbc-48c4-af00-78cc6f0c5e37")
 		)
 		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
 					(reference "C3")
 					(unit 1)
 				)
@@ -4724,8 +3538,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ScottoKeebs:Placeholder_Resistor")
-		(at 168.91 77.47 90)
+		(lib_id "Device:D_Schottky")
+		(at 171.45 50.8 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4734,9 +3548,169 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "ecdb23c0-8f1d-48d8-905a-312d03268481")
+		(uuid "156521b6-60c6-4060-a19d-6c0dea948991")
+		(property "Reference" "D1"
+			(at 171.7675 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "D_Schottky"
+			(at 171.7675 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 171.45 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 171.45 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Schottky diode"
+			(at 171.45 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "5a819d95-ccfb-4508-8dbb-6ebbce91a815")
+		)
+		(pin "1"
+			(uuid "8c66f7d6-796e-43b8-9423-351e844e5a52")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 142.24 50.8 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1783e5e7-e7e4-4511-a1d9-f59655a8ad84")
+		(property "Reference" "L1"
+			(at 142.24 45.72 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "4.7uH"
+			(at 142.24 48.26 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Inductor"
+			(at 142.24 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9f78b4bc-49cd-4c52-b13d-5fff824e53c5")
+		)
+		(pin "2"
+			(uuid "f2f452d0-e64a-4b8e-abc9-baace2616072")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ScottoKeebs:Placeholder_Resistor")
+		(at 165.1 77.47 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "29c31bc8-9715-4616-a905-4dfd9e022569")
 		(property "Reference" "R1"
-			(at 171.45 76.1999 90)
+			(at 167.64 76.1999 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4747,7 +3721,7 @@
 			)
 		)
 		(property "Value" "1.87k"
-			(at 171.45 78.7399 90)
+			(at 167.64 78.7399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4758,7 +3732,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 170.688 77.47 0)
+			(at 166.878 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4769,7 +3743,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 168.91 77.47 90)
+			(at 165.1 77.47 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4780,7 +3754,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 168.91 77.47 0)
+			(at 165.1 77.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4791,14 +3765,14 @@
 			)
 		)
 		(pin "2"
-			(uuid "030cab31-bc92-4205-b7a1-e2e91181c3de")
+			(uuid "4ae608a8-9fff-45d0-bc9c-d7f30199d1c9")
 		)
 		(pin "1"
-			(uuid "7f134ed2-5053-43b8-b8be-011b072a7fe3")
+			(uuid "596acfc9-4d04-4b3e-89ef-dd324c73ee69")
 		)
 		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
 					(reference "R1")
 					(unit 1)
 				)
@@ -4806,8 +3780,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 113.03 64.77 0)
+		(lib_name "I2S_MEMS_Microphone_1")
+		(lib_id "CCEW Wearable Alert:I2S_MEMS_Microphone")
+		(at 191.77 115.57 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4815,10 +3790,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ecdec9d4-7695-45a6-b3eb-528e1006fe90")
-		(property "Reference" "C2"
-			(at 116.84 63.4999 0)
+		(uuid "2ecab4f2-c555-42c0-9251-7a01f1f402d5")
+		(property "Reference" "I2S_MEMS_Mic1"
+			(at 190.246 113.03 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4828,8 +3802,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
-			(at 116.84 66.0399 0)
+		(property "Value" ""
+			(at 196.215 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4840,7 +3814,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 113.9952 68.58 0)
+			(at 179.58 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4851,7 +3825,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 64.77 0)
+			(at 179.58 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4861,8 +3835,102 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor"
-			(at 113.03 64.77 0)
+		(property "Description" ""
+			(at 179.58 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin ""
+			(uuid "afac2072-b12a-44c7-bee2-9ecb1dd2bed0")
+		)
+		(pin ""
+			(uuid "5103cdf4-bece-4d21-a469-eb67943bec68")
+		)
+		(pin ""
+			(uuid "7ff7ff50-a87b-42f2-adfd-0c28fde8f6e7")
+		)
+		(pin ""
+			(uuid "9a0bf15b-1489-46e7-956d-a6dc7a784394")
+		)
+		(pin ""
+			(uuid "f1f79faf-dc5e-4ace-bbba-a5ebe1069b31")
+		)
+		(pin ""
+			(uuid "98a1adc8-1d40-41b9-80c5-53d5e4d4fd0f")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "I2S_MEMS_Mic1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CCEW Wearable Alert:MIC2288")
+		(at 137.16 73.66 270)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3b9c2508-c9a8-4f43-8e33-a9180c1bb008")
+		(property "Reference" "BoostConverter1"
+			(at 142.875 55.88 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 137.16 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/3/282/1/MIC2288-1A-1.2MHz-PWM-Boost-Converter-DS20006034.pdf"
+			(at 110.744 65.532 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1A, 1.2 MHz PWM Boost Converter"
+			(at 114.3 62.992 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4873,15 +3941,916 @@
 			)
 		)
 		(pin "2"
-			(uuid "514a20ba-2564-4d1e-9e0d-393bf921b0b3")
+			(uuid "fa29e04b-fca3-4017-9775-af0a82fec0f5")
+		)
+		(pin "3"
+			(uuid "80300055-94da-4594-9a28-93469cb47746")
+		)
+		(pin "4"
+			(uuid "ba88df99-74c0-4985-a475-b4adf1a6bd37")
+		)
+		(pin "5"
+			(uuid "60c7b0d9-bd8e-4c62-88ab-39bfdf3f2171")
 		)
 		(pin "1"
-			(uuid "89e34d1b-7046-4a93-b245-2dc9dff006bd")
+			(uuid "98d93663-9734-49c6-a170-987cb969aace")
 		)
 		(instances
-			(project "Wearable_Alert_Device_Wiring"
-				(path "/e7135e90-054b-4581-8897-82526b4a9337"
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "BoostConverter1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 227.33 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "437a0f89-4bbb-4f5c-8c04-597db915a654")
+		(property "Reference" "#PWR02"
+			(at 227.33 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 227.33 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 227.33 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 227.33 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ffabb282-1c70-4229-85b8-8136206559c6")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 179.07 114.3 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "578d1134-9074-49ca-b103-dd156e4fce4a")
+		(property "Reference" "C1"
+			(at 179.07 110.998 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 179.07 117.856 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 175.26 115.2652 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 179.07 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 179.07 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "7fae9653-0b4d-4a44-b2c2-8ebcd7c0bca2")
+		)
+		(pin "1"
+			(uuid "01b04e82-f37f-41aa-9d48-71e46809d43d")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ScottoKeebs:Placeholder_Resistor")
+		(at 200.66 92.71 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "59f032d0-a077-45bb-8a92-55e51c958480")
+		(property "Reference" "R2"
+			(at 200.66 86.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1kΩ"
+			(at 200.66 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 200.66 90.932 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 92.71 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 200.66 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "53fb12a1-86c5-40f6-8f33-9b7b79d3f881")
+		)
+		(pin "1"
+			(uuid "ba1f17d3-6b81-4b6f-b2e7-850c6851052d")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 213.36 92.71 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5aa543a0-8120-4f74-b1e5-f958ae190e0a")
+		(property "Reference" "D2"
+			(at 213.106 85.852 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED"
+			(at 213.36 88.646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 213.36 92.71 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "49704a8f-e28c-4a58-a8e9-81f8b07dac19")
+		)
+		(pin "2"
+			(uuid "54512dac-e05e-4927-9f13-68c1106906ab")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CCEW Wearable Alert:Arduino_Nano_ESP32")
+		(at 157.48 158.75 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "74768129-6a08-4b03-bb73-2b4a513d133d")
+		(property "Reference" "Arduino_Nano_ESP1"
+			(at 147.32 99.822 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 147.32 100.33 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 132.08 101.6 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "16"
+			(uuid "70c947ce-18dc-4bcd-aa36-7852f842bdbb")
+		)
+		(pin "2"
+			(uuid "00b45fbd-4752-434c-b94e-8ff16720a13e")
+		)
+		(pin "5"
+			(uuid "42999e54-b06b-48f6-9058-9d6b99ee412f")
+		)
+		(pin "26"
+			(uuid "ecc3bf92-cc9a-47dd-bca9-cd90d1c818e7")
+		)
+		(pin "3"
+			(uuid "3f633251-25ee-400c-a8d6-9485daa3da87")
+		)
+		(pin "19"
+			(uuid "88465a45-ac9a-453d-83e6-6a1d8881f510")
+		)
+		(pin "6"
+			(uuid "c6a91a3e-13fa-4e15-8dbc-b367760d348c")
+		)
+		(pin "17"
+			(uuid "dee96940-6f8b-4b58-a46f-6436ddb279af")
+		)
+		(pin "7"
+			(uuid "ef175827-bfbb-4033-8c2a-5607d0ee0c4b")
+		)
+		(pin "29"
+			(uuid "d098c9c4-2645-457e-9785-ae5eccad1016")
+		)
+		(pin "9"
+			(uuid "8c77e859-bcbc-4634-9244-c6cd4c08af49")
+		)
+		(pin "11"
+			(uuid "1d110628-32f8-464f-b9c6-ca9e63517d96")
+		)
+		(pin "22"
+			(uuid "4b0d7a83-3b0c-45c8-9062-5ec1ed3bc749")
+		)
+		(pin "4"
+			(uuid "7e80c029-6c76-4acc-b710-02544cedee3f")
+		)
+		(pin "15"
+			(uuid "dace0cb6-9b7e-4d9f-b2ba-341e43c50d88")
+		)
+		(pin "27"
+			(uuid "3d18d73c-d9d2-45c5-b9ca-cb45b844744c")
+		)
+		(pin "23"
+			(uuid "2e695d42-b019-488d-b122-7d6d5319714f")
+		)
+		(pin "30"
+			(uuid "7d29a944-7d11-4227-826b-532595b79cca")
+		)
+		(pin "18"
+			(uuid "cbf9641a-7f96-4c3e-9786-8c6e3f76b160")
+		)
+		(pin "21"
+			(uuid "6d0dbcb0-9d58-4341-a211-fe1edd78819f")
+		)
+		(pin "24"
+			(uuid "0774bec8-cbc3-485a-a209-934dbad193eb")
+		)
+		(pin "1"
+			(uuid "35cbc5a2-1f50-4b21-961e-8ef26bc185f9")
+		)
+		(pin "20"
+			(uuid "f34623f3-f3f3-4aa3-961f-e89ca93a8866")
+		)
+		(pin "28"
+			(uuid "0ab37904-8d8c-4ecb-95c6-2f544574c4eb")
+		)
+		(pin "25"
+			(uuid "ae9d6f3f-7eb4-4e54-bd4f-28e7bf2864f5")
+		)
+		(pin "10"
+			(uuid "ccea0b8c-cd84-4122-8299-bc0213f9f17a")
+		)
+		(pin "14"
+			(uuid "f7595b50-dc23-46ed-8556-4543a5f508d8")
+		)
+		(pin "12"
+			(uuid "3ec4ea14-e8d7-4aba-b222-5bee543433aa")
+		)
+		(pin "13"
+			(uuid "38abb429-87d4-498a-8e55-cc2ee6a0209b")
+		)
+		(pin "8"
+			(uuid "ee6a9dd6-1481-43e5-8d1d-4f4d0aab6d68")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "Arduino_Nano_ESP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 104.14 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81637dd9-3e10-42c2-840b-8a51b8e985a7")
+		(property "Reference" "#PWR01"
+			(at 104.14 49.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.7V"
+			(at 104.14 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 104.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 104.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 104.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8c15ee60-7dee-4f3a-8d76-cb1d9c267fd0")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Adafruit MicroLipo Charger v2-eagle-import:MCP73831/2")
+		(at 83.82 53.34 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b333dee-8dac-4f10-a388-f735cdfe4d8c")
+		(property "Reference" "U1"
+			(at 83.82 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 73.66 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" "Adafruit MicroLipo Charger v2:SOT23-5"
+			(at 83.82 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 83.82 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "MCP73831/2 LIPO Charger\n\n• VDD: 3.75 - 6V\n• Temp -40 - 85°C\n• Programmable Charge Rate: 15-500mA\n\nNOTE: STAT is a tri-state logic output on the MCP73831 and an open-drain output on the MCP73832.\n\nSOT23-5 with 4.2V output and tri-state logic on STAT = MCP73831T-2ACI/OT"
+			(at 83.82 53.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4d62cf2a-bcac-4c0e-87ee-e5191a469967")
+		)
+		(pin "3"
+			(uuid "c612f635-342d-4d2d-80b9-422133fddfad")
+		)
+		(pin "4"
+			(uuid "7881a39f-54eb-47aa-95e2-50b7b5f7ce74")
+		)
+		(pin "5"
+			(uuid "079c057c-0442-4dad-a96e-5fc6d523f3f7")
+		)
+		(pin "1"
+			(uuid "5d7172d3-7f0e-41d9-8858-148afff1192b")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 109.22 64.77 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cde2a0a6-af8c-41d9-934d-95ea147dd185")
+		(property "Reference" "C2"
+			(at 113.03 63.4999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 113.03 66.0399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.1852 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 109.22 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "fc7477c1-79e0-4c84-9b0d-be9d5dfaf802")
+		)
+		(pin "1"
+			(uuid "0d3cbd78-ff54-4365-b3c8-79df2749e3fb")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CCEW Wearable Alert:320E11RED")
+		(at 194.31 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e410468c-6436-49dc-a71a-84137230e18c")
+		(property "Reference" "Push_Switch1"
+			(at 207.01 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 194.31 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 194.31 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://configured-product-images.s3.amazonaws.com/Datasheets/320.pdf"
+			(at 203.962 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Push button switch"
+			(at 205.486 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "ec4e5911-e28f-48d5-b812-dc0a5f4030c5")
+		)
+		(pin "1"
+			(uuid "e3a1a513-0c30-4461-a866-b185e5f708b5")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "Push_Switch1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ScottoKeebs:Placeholder_Resistor")
+		(at 165.1 62.23 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef261eed-2f1c-4ec9-97d4-fde037506a25")
+		(property "Reference" "5.62k1"
+			(at 167.64 60.9599 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Resistor"
+			(at 167.64 63.4999 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 163.322 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 165.1 62.23 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 165.1 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "8eecd794-9e84-4613-a282-578e55e5a592")
+		)
+		(pin "1"
+			(uuid "eb8c5b4e-c0a7-4b04-9fce-33a2b9c7d8d8")
+		)
+		(instances
+			(project "Microphone_System_Wiring"
+				(path "/14187d19-330d-4101-840b-5d5efc602364"
+					(reference "5.62k1")
 					(unit 1)
 				)
 			)
