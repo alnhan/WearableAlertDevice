@@ -1235,7 +1235,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "LIPO_Charger"
-			(at 6.604 8.382 0)
+			(at 6.604 13.716 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1289,7 +1289,7 @@
 		)
 		(symbol "LIPO_Charger_0_1"
 			(rectangle
-				(start 0 6.35)
+				(start 0 8.89)
 				(end 12.7 0)
 				(stroke
 					(width 0.254)
@@ -1384,6 +1384,24 @@
 					)
 				)
 				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin power_in line
+				(at 6.35 11.43 270)
+				(length 2.54)
+				(name "JST"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
 					(effects
 						(font
 							(size 1.27 1.27)
