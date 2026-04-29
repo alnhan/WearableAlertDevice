@@ -414,7 +414,7 @@
         "uuid": "ab575065-7949-4984-bd74-060dfe22f1fc"
       }
     ],
-    "used_designators": "D2,#PWR1-2,R2,Arduino_Nano_ESP1,LIPO_Charger1,C1,Gravity_Reciever_Module1,MEMS_Microphone_Analog1,Push_Switch1",
+    "used_designators": "LIPO_Charger1",
     "variants": []
   },
   "sheets": [

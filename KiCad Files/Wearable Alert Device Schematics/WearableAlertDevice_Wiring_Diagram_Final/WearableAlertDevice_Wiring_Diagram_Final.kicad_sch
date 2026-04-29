@@ -142,7 +142,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "LIPO_Charger"
-				(at 6.604 8.382 0)
+				(at 6.604 13.716 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -183,7 +183,7 @@
 					)
 				)
 			)
-			(property "Description" ""
+			(property "Description" "LIPOLY BATTERY CHARGER W/USB C"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -196,7 +196,7 @@
 			)
 			(symbol "LIPO_Charger_0_1"
 				(rectangle
-					(start 0 6.35)
+					(start 0 8.89)
 					(end 12.7 0)
 					(stroke
 						(width 0.254)
@@ -291,6 +291,24 @@
 						)
 					)
 					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 6.35 11.43 270)
+					(length 2.54)
+					(name "JST"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1977,7 +1995,7 @@
 	)
 	(text "The GPS will always be running and collecting data.\nIt collects longitude, latitude, and altitude of\nthe current location"
 		(exclude_from_sim no)
-		(at 70.104 65.278 0)
+		(at 65.786 65.786 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1988,7 +2006,7 @@
 	)
 	(text "Adafruit Industries Lithium Ion Battery Pack - 3.7V 4400mAh\nThis battery can be switched out for a higher voltage battery if desired."
 		(exclude_from_sim no)
-		(at 202.692 41.91 0)
+		(at 108.712 39.624 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1998,7 +2016,7 @@
 	)
 	(text "LIPO Charger - Rechargeable component for the 3.7V Battery"
 		(exclude_from_sim no)
-		(at 141.732 48.768 0)
+		(at 175.006 47.244 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2039,7 +2057,7 @@
 	)
 	(text "This component is used to recharge the Lithium Battery Pack"
 		(exclude_from_sim no)
-		(at 141.478 51.562 0)
+		(at 174.752 50.038 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2112,12 +2130,6 @@
 		(uuid "cedba9f2-b442-43f3-92a3-4fad25e14dde")
 	)
 	(junction
-		(at 203.2 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e25f463e-6368-44d7-a645-8c9c2b85bece")
-	)
-	(junction
 		(at 222.25 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2188,16 +2200,6 @@
 			(type default)
 		)
 		(uuid "10399cbb-129b-4304-94c0-7c472a58af8b")
-	)
-	(wire
-		(pts
-			(xy 203.2 58.42) (xy 231.14 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13aebf8c-266d-4405-9d19-00157f73c47b")
 	)
 	(wire
 		(pts
@@ -2311,6 +2313,16 @@
 	)
 	(wire
 		(pts
+			(xy 105.41 49.53) (xy 105.41 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "447dceeb-a0ec-4188-a887-77ffbcf95d47")
+	)
+	(wire
+		(pts
 			(xy 200.66 119.38) (xy 222.25 119.38)
 		)
 		(stroke
@@ -2331,7 +2343,17 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 58.42) (xy 231.14 146.05)
+			(xy 105.41 55.88) (xy 139.7 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63513700-9743-4859-8d8d-793be4ce3636")
+	)
+	(wire
+		(pts
+			(xy 231.14 57.15) (xy 231.14 146.05)
 		)
 		(stroke
 			(width 0)
@@ -2368,16 +2390,6 @@
 			(type default)
 		)
 		(uuid "6e66db5a-62a3-4649-9e4b-67ca8e488516")
-	)
-	(wire
-		(pts
-			(xy 203.2 50.8) (xy 203.2 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6fe44a43-4ced-4c40-ba78-245f9cccdad7")
 	)
 	(wire
 		(pts
@@ -2421,7 +2433,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 60.96) (xy 222.25 72.39)
+			(xy 222.25 59.69) (xy 222.25 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2471,7 +2483,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 60.96) (xy 222.25 60.96)
+			(xy 180.34 59.69) (xy 222.25 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2531,7 +2543,17 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 58.42) (xy 203.2 58.42)
+			(xy 139.7 62.23) (xy 166.37 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca17a6ed-0c5d-4562-94ea-3e10b6694711")
+	)
+	(wire
+		(pts
+			(xy 180.34 57.15) (xy 231.14 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2611,6 +2633,16 @@
 	)
 	(wire
 		(pts
+			(xy 139.7 55.88) (xy 139.7 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee176392-f86a-4d06-8496-9093d4d58ecd")
+	)
+	(wire
+		(pts
 			(xy 179.07 143.51) (xy 179.07 130.81)
 		)
 		(stroke
@@ -2628,95 +2660,6 @@
 			(type default)
 		)
 		(uuid "ffbb72ae-881c-4736-ac71-79b225382d40")
-	)
-	(symbol
-		(lib_id "CCEW Wearable Alert Library:LIPO_Charger")
-		(at 144.78 69.85 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1c5b4f35-5f84-4dd8-961f-eca6abe8a2ca")
-		(property "Reference" "Adafruit_4410"
-			(at 141.605 54.61 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" ""
-			(at 144.78 69.85 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.78 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 144.78 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 144.78 69.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "cb76ac9c-2c31-421f-97cf-a6ae921ebde5")
-		)
-		(pin "5"
-			(uuid "f07b9be7-c0d2-4989-98de-60c3f26865c2")
-		)
-		(pin "3"
-			(uuid "45ab7dfc-8047-4afb-9e2d-6e61df65a845")
-		)
-		(pin "1"
-			(uuid "9f52f791-f95e-4ef5-a81e-f8953ac4d25f")
-		)
-		(pin "2"
-			(uuid "282ee859-b02f-40c4-b9df-3d3dcfed8f74")
-		)
-		(instances
-			(project "WearableAlertDevice_Wiring_Diagram_Final"
-				(path "/ab575065-7949-4984-bd74-060dfe22f1fc"
-					(reference "Adafruit_4410")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_name "MIC2288_1")
@@ -3372,7 +3315,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 203.2 50.8 0)
+		(at 105.41 49.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3383,7 +3326,7 @@
 		(fields_autoplaced yes)
 		(uuid "c49eb35f-11bd-432c-858c-4a96747dc254")
 		(property "Reference" "#PWR01"
-			(at 203.2 54.61 0)
+			(at 105.41 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3394,7 +3337,7 @@
 			)
 		)
 		(property "Value" "3.7V 4400mAh"
-			(at 203.2 45.72 0)
+			(at 105.41 44.45 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3404,7 +3347,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 203.2 50.8 0)
+			(at 105.41 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3415,7 +3358,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 203.2 50.8 0)
+			(at 105.41 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3426,7 +3369,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 203.2 50.8 0)
+			(at 105.41 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3443,6 +3386,98 @@
 			(project "WearableAlertDevice_Wiring_Diagram_Final"
 				(path "/ab575065-7949-4984-bd74-060dfe22f1fc"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CCEW Wearable Alert Library:LIPO_Charger")
+		(at 177.8 68.58 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d9fdbf9f-a1b9-4ff3-8361-5c6927c45cfa")
+		(property "Reference" "LIPO_Charger1"
+			(at 173.355 53.34 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 177.8 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 177.8 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "LIPOLY BATTERY CHARGER W/USB C"
+			(at 177.8 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f40ebdb2-f497-44b4-b0e3-72b6db7b41eb")
+		)
+		(pin "4"
+			(uuid "ab4916a6-e81a-41c9-8d62-d6a025fc87d2")
+		)
+		(pin "2"
+			(uuid "24a32c2a-3d82-4dfa-b824-6137d78540b6")
+		)
+		(pin "3"
+			(uuid "2763701e-87c3-46a7-98d2-1f7728ec20f9")
+		)
+		(pin "5"
+			(uuid "d792d2c1-fdad-48d8-b1df-f7d2c1df9031")
+		)
+		(pin "6"
+			(uuid "8b97c623-c091-4fac-a855-6046cd91a65a")
+		)
+		(instances
+			(project "WearableAlertDevice_Wiring_Diagram_Final"
+				(path "/ab575065-7949-4984-bd74-060dfe22f1fc"
+					(reference "LIPO_Charger1")
 					(unit 1)
 				)
 			)
