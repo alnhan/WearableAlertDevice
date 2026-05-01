@@ -2037,7 +2037,7 @@
 	)
 	(text "GPS Tracking Module\n"
 		(exclude_from_sim no)
-		(at 87.63 70.866 0)
+		(at 87.376 71.374 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2112,6 +2112,12 @@
 		(uuid "94a99bab-58d0-4c62-b6da-7c910eef14c6")
 	)
 	(junction
+		(at 222.25 72.39)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a18adf36-c43f-4e08-81ae-4a1775c08411")
+	)
+	(junction
 		(at 222.25 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2128,12 +2134,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cedba9f2-b442-43f3-92a3-4fad25e14dde")
-	)
-	(junction
-		(at 222.25 72.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f712a530-6093-4bb8-bb87-5519c39e1f82")
 	)
 	(junction
 		(at 115.57 99.06)
@@ -2203,7 +2203,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 80.01) (xy 100.33 72.39)
+			(xy 105.41 80.01) (xy 105.41 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2303,7 +2303,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 80.01) (xy 100.33 80.01)
+			(xy 93.98 80.01) (xy 105.41 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2383,7 +2383,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 72.39) (xy 222.25 72.39)
+			(xy 105.41 72.39) (xy 222.25 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2673,8 +2673,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2f4394fb-5123-4f38-be58-139df46b9027")
-		(property "Reference" "MIC2288"
-			(at 91.186 73.914 90)
+		(property "Reference" "Gravity_GNSS_Receiver_Module"
+			(at 101.854 73.914 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2743,7 +2743,7 @@
 		(instances
 			(project "WearableAlertDevice_Wiring_Diagram_Final"
 				(path "/ab575065-7949-4984-bd74-060dfe22f1fc"
-					(reference "MIC2288")
+					(reference "Gravity_GNSS_Receiver_Module")
 					(unit 1)
 				)
 			)

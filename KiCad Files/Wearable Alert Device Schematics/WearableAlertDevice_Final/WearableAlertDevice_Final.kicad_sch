@@ -1974,12 +1974,6 @@
 		)
 	)
 	(junction
-		(at 227.33 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2f29bc5d-a11f-40c9-afdb-e37e2ff6f332")
-	)
-	(junction
 		(at 123.19 104.14)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2008,6 +2002,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6c042846-2543-437e-9895-0eea0a3541f4")
+	)
+	(junction
+		(at 227.33 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7df8fce8-d174-46d6-954d-8ac0572c2595")
 	)
 	(junction
 		(at 227.33 121.92)
@@ -2259,7 +2259,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 81.28) (xy 227.33 81.28)
+			(xy 114.3 81.28) (xy 227.33 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2449,7 +2449,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 96.52) (xy 109.22 96.52)
+			(xy 102.87 96.52) (xy 114.3 96.52)
 		)
 		(stroke
 			(width 0)
@@ -2499,7 +2499,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 96.52) (xy 109.22 81.28)
+			(xy 114.3 96.52) (xy 114.3 81.28)
 		)
 		(stroke
 			(width 0)
@@ -2864,8 +2864,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5a518a7a-5378-4656-a27f-35804d2d3ad0")
-		(property "Reference" "MIC2288"
-			(at 101.346 90.424 90)
+		(property "Reference" "Gravity_GNSS_Receiver_Module"
+			(at 109.982 89.662 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2934,7 +2934,7 @@
 		(instances
 			(project "WearableAlertDevice_Final"
 				(path "/b3918005-f5d6-4a88-9e4d-fb74a34c57a0"
-					(reference "MIC2288")
+					(reference "Gravity_GNSS_Receiver_Module")
 					(unit 1)
 				)
 			)

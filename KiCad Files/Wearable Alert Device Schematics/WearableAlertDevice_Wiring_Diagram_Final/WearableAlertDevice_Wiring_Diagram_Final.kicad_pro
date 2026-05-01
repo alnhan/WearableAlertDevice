@@ -414,7 +414,7 @@
         "uuid": "ab575065-7949-4984-bd74-060dfe22f1fc"
       }
     ],
-    "used_designators": "LIPO_Charger1",
+    "used_designators": "GNSS_Receiver_Module1",
     "variants": []
   },
   "sheets": [
