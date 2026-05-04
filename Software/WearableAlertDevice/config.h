@@ -7,6 +7,7 @@
 */
 
 #define BUTTON 17
+#define LED_PIN 18
 // ----------------------------------
 // I2C AND GPS MODULE SETTINGS
 // ----------------------------------
