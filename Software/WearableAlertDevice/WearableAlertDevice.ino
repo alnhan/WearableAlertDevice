@@ -145,6 +145,8 @@ void setup() {
   Serial.begin(115200);                 // Baud rate set to 115200
   pinMode(BUTTON, INPUT_PULLUP);        // Button is active-low
   pinMode(MIC_PIN, INPUT_PULLDOWN);     // Microphone
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
 
   // Attach the interrupt function to the active-low button.
   attachInterrupt(digitalPinToInterrupt(BUTTON), handleButtonInterrupt, FALLING);
@@ -280,11 +282,17 @@ void loop() {
         Serial.println(dominantFrequencyHz, 5);
         dataPacket.gunshotDetected = true;
         dataPacket.callEmergencyResponders = true;
+        digitalWrite(LED_PIN, HIGH);
       }
       else {
         dataPacket.gunshotDetected = false;
         dataPacket.callEmergencyResponders = false;
+        digitalWrite(LED_PIN, LOW);
       }
+    }
+    else {
+      // Gunshot threshold was not exceeded.
+      digitalWrite(LED_PIN, LOW);
     }
 
     // Format data in JSON format.
