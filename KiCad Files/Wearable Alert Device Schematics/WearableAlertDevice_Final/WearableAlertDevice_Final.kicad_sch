@@ -4,6 +4,12 @@
 	(generator_version "10.0")
 	(uuid "b3918005-f5d6-4a88-9e4d-fb74a34c57a0")
 	(paper "A4")
+	(title_block
+		(title "Wearable Alert Device Schematics")
+		(date "2026-05-04")
+		(company "CCEW")
+		(comment 1 "Team Members: Jonas Wallman, Ryan Kiesau, Cody Chan, Alex Ho")
+	)
 	(lib_symbols
 		(symbol "CCEW Wearable Alert Library:Fermion{colon}_MEMS_Microphone"
 			(exclude_from_sim no)
